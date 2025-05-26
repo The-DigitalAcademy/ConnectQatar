@@ -4,7 +4,7 @@ import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-following-post',
-  imports: [RouterOutlet],
+  imports: [],
   templateUrl: './following-post.component.html',
   styles: ``
 })
