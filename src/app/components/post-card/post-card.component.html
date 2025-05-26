@@ -1,21 +1,23 @@
-<div class="shadow p-5">
-    <div class="flex rounded-full mt-5 ml-5">
-        <img class="rounded-full h-15 w-15"
-            src="https://images.pexels.com/photos/7243202/pexels-photo-7243202.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load"
-            alt="user profile">
-    
-            <h1 class="text-white text-xl m-2 font-thin">Lukhanyo</h1>
-    </div>
-    
-    <div class="h-auto mt-5 m-5">
-        <img 
-            src="https://images.pexels.com/photos/7243115/pexels-photo-7243115.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            alt="user profile">
-    </div>
-    
-    <div class="flex gap-4 justify-center text-white">
-    <button class="border border-blue-500 rounded-full p-2 w-40 "><i class="bi bi-hand-thumbs-up text-white text-2xl "></i> Likes</button>
-    <button class="border border-blue-500 rounded-full p-2 w-40 "><i class="bi bi-chat-fill text-white text-2xl "></i> Comments</button>
-    </div>
-    
-    </div>
+<div *ngFor="let item of postsWithProfiles" class="shadow p-5 mb-10">
+  <div class="flex rounded-full mt-5 ml-5">
+    <img class="rounded-full h-15 w-15" [src]="item.profile.image" alt="user profile" />
+    <h1 class="text-white text-xl m-2 font-thin">{{ item.profile.name }}</h1>
+  </div>
+
+  <div class="h-fit w-full justify-center items-center mt-5 ">
+    <img [src]="item.post.image" alt="user post" />
+  </div>
+
+  <p class="text-white text-lg m-5">{{ item.post.title }}</p>
+
+  <div class="flex gap-4 justify-center  text-white">
+    <button class="border border-blue-500 flex-1 rounded-full p-2 w-40">
+      <i class="bi bi-hand-thumbs-up text-center justify-center items-center flex-row text-white text-2xl"></i>
+       {{ item.likes?.count || 0 }} Likes
+    </button>
+    <button class="border border-blue-500 flex-1 rounded-full p-2 w-40">
+      <i class="bi bi-chat-fill text-white text-2xl"></i>
+       {{ item.comments?.length || 0 }} Comments
+    </button>
+  </div>
+</div>
