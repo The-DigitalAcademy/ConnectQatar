@@ -1,0 +1,60 @@
+<div class="justify-self-center ">
+    <div class="justify-self-center ">
+        <h2 class="text-center fixed top-0 left-0 p-2 bg-white/30 backdrop-blur-md flex gap-3 text-2xl">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle" routerLink="/userProfile" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+              </svg>
+            Edit Profile</h2>
+        <div class="mt-15 flex flex-col hover:cursor-pointer">
+          <div class="justify-self-center ">
+            <img src="https://images.pexels.com/photos/718978/pexels-photo-718978.jpeg?auto=compress&cs=tinysrgb&w=800" class="w-15 h-15 border rounded-full flex justify-self-center "/>
+          </div>
+          <p class="mt-2 mb-5 flex justify-center items-center justify-self-center ">Change Profile Picture</p>
+        </div>
+      </div>
+
+      <div class="justify-self-center">
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                Name
+              </label>
+              <input class="border rounded w-full py-2 px-3 text-gray-700 " id="name" type="text" placeholder="Username">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                  Email
+                </label>
+                <input class="border rounded w-full py-2 px-3 text-gray-700 " id="email" type="text" placeholder="Email">
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="gender">
+                  Gender
+                </label>
+                <select name="gender" class=" border rounded w-full py-2 px-3 text-gray-700 ">
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                </select>
+              </div>
+            <div class="mb-6">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                Password
+              </label>
+              <input class="border rounded w-full py-2 px-3 text-gray-700 mb-3 " id="password" type="password" placeholder="*********">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="bio">
+                  Bio
+                </label>
+                <textarea class="border rounded w-full py-2 px-3 text-gray-700 " id="bio">
+
+                </textarea>
+              </div>
+            <div class="flex items-center justify-between justify-self-center">
+              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline border" type="button">
+                Edit
+              </button>
+            </div>
+          </form>
+      </div>
+</div>
