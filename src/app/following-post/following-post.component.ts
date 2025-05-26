@@ -7,7 +7,7 @@ import { StoryUpdatesComponent } from "../components/story-updates/story-updates
 
 @Component({
   selector: 'app-following-post',
-  imports: [RouterOutlet, BottomNavComponent, PostCardComponent, StoryUpdatesComponent],
+  imports: [BottomNavComponent, PostCardComponent, StoryUpdatesComponent],
   templateUrl: './following-post.component.html',
   styles: ``
 })
