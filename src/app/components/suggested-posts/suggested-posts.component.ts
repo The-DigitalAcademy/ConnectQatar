@@ -7,7 +7,7 @@ import { SuggestedPostCardComponent } from "../suggested-post-card/suggested-pos
 
 @Component({
   selector: 'app-suggested-posts',
-  imports: [PostTypeComponent, BottomNavComponent, PostCardComponent, CommonModule, SuggestedPostCardComponent],
+  imports: [PostTypeComponent, BottomNavComponent, CommonModule, SuggestedPostCardComponent],
   templateUrl: './suggested-posts.component.html',
   styles: ``
 })
