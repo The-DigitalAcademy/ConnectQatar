@@ -1,13 +1,97 @@
 {
-    "posts": [
-      { "id": "1", "title": "a title", "views": 100 },
-      { "id": "2", "title": "another title", "views": 200 }
-    ],
-    "comments": [
-      { "id": "1", "text": "a comment about post 1", "postId": "1" },
-      { "id": "2", "text": "another comment about post 1", "postId": "1" }
-    ],
-    "profile": {
-      "name": "typicode"
+  "posts": [
+    {
+      "id": "1",
+      "title": "beauty and tyhe beast",
+      "image": "https://images.pexels.com/photos/16952437/pexels-photo-16952437/free-photo-of-profile-of-a-smiling-woman-with-curly-hair.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "title": "a litle bit of this and that",
+      "image": "https://images.pexels.com/photos/17904347/pexels-photo-17904347/free-photo-of-women-and-cat.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "profileId": "1"
+    },
+    {
+      "id": "3",
+      "title": "a title",
+      "image": "https://images.pexels.com/photos/3016714/pexels-photo-3016714.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "3"
     }
-  }
+  ],
+  "comments": [
+    { "id": "1", "text": "a comment about post 1", "postId": "1" },
+    { "id": "2", "text": "another comment about post 1", "postId": "1" },
+    { "id": "3", "text": " comment about post 3", "postId": "3" },
+    { "id": "4", "text": " comment about post 2", "postId": "2" },
+    { "id": "5", "text": "another comment about post 3", "postId": "3" },
+    { "id": "6", "text": "another comment about post 1", "postId": "1" }
+  ],
+
+  "like": [
+    { "id": "1", "count": 23, "postId": "2" },
+    { "id": "2", "count": 23, "postId": "1" },
+    { "id": "3", "count": 31, "postId": "3" }
+  ],
+
+  "user": [
+    { "id": "1", "userName": "leo@gmail.com", "password": "12345" },
+    { "id": "2", "userName": "tau@gmail.com", "password": "12345" },
+    { "id": "3", "userName": "neo@gmail.com", "password": "12345" },
+    { "id": "4", "userName": "dono@gmail.com", "password": "12345" },
+    { "id": "5", "userName": "jerry@gmail.com", "password": "12345" }
+  ],
+
+  "profile": [
+    {
+      "id": "1",
+      "name": "Luuh",
+      "image": "https://images.pexels.com/photos/3500014/pexels-photo-3500014.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "name": "neo",
+      "image": "https://images.pexels.com/photos/3250603/pexels-photo-3250603.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "userId": "2"
+    },
+    {
+      "id": "3",
+      "name": "tau",
+      "image": "https://images.pexels.com/photos/2616953/pexels-photo-2616953.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "userId": "3"
+    },
+    {
+      "id": "4",
+      "name": "leo",
+      "image": "https://images.pexels.com/photos/4668934/pexels-photo-4668934.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "userId": "4"
+    },
+    {
+      "id": "5",
+      "name": "leo",
+      "image": "https://images.pexels.com/photos/6124236/pexels-photo-6124236.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "userId": "5"
+    }
+  ],
+
+  "friends": [
+    { "id": "1", "count": 23, "profileId": "1" },
+    { "id": "2", "count": 3, "profileId": "4" },
+    { "id": "3", "count": 0, "profileId": "3" }
+  ],
+
+  "chats": [
+    { "id": "1", "message": "hello", "profileId": "2" },
+    { "id": "2", "message": "hello", "profileId": "1" },
+    { "id": "3", "message": "hello", "profileId": "3" },
+    { "id": "4", "message": "how are you", "profileId": "2" }
+  ],
+
+  "storyUpdate": [
+    { "id": "1", "image": "https://images.pexels.com/photos/3219442/pexels-photo-3219442.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load", "profileId": "3" },
+    { "id": "2", "image": "https://images.pexels.com/photos/12881264/pexels-photo-12881264.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load", "profileId": "2" },
+    { "id": "3", "image": "https://images.pexels.com/photos/2306109/pexels-photo-2306109.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load", "profileId": "3" },
+    { "id": "4", "image": "https://images.pexels.com/photos/1628240/pexels-photo-1628240.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load", "profileId": "1" }
+  ]
+}
