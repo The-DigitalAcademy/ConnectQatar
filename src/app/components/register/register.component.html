@@ -1,4 +1,4 @@
-<div class="m-auto w-auto h-screen flex justify-center  mb-20 mt-80 ">
+<!-- <div class="m-auto w-auto h-screen flex justify-center  mb-20 mt-80 ">
     <div>
         <svg height="100" id="svg8" version="1.1" viewBox="0 0 135.46666 135.46667" width="300"
             xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
@@ -50,5 +50,33 @@
                 </div>
 
             </div>
-        </div>
+        </div> -->
+
+
+    <h2>Signup</h2>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="bg-amber-50 border justify-self-center">
+      <label>Full Name:
+        <input formControlName="fullname" />
+      </label><br />
+
+      <label>Username:
+        <input formControlName="username" />
+      </label><br />
+
+      <label>Email:
+        <input formControlName="email" />
+      </label><br />
+
+      <label>Password:
+        <input type="password" formControlName="password" />
+      </label><br />
+
+      <label>Confirm Password:
+        <input type="password" formControlName="confirmPassword" />
+      </label><br />
+
+      <button type="submit" [disabled]="signupForm.invalid" >Signup</button>
+    </form>
+
+    <div *ngIf="message">{{ message }}</div>
 
