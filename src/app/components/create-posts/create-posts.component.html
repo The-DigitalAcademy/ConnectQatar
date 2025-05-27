@@ -30,8 +30,28 @@
 
 <!-- Overlay -->
 <div *ngIf="showOverlay" class="bg-white">
-    <div class="overlay-content">
-      <h2>{{ overlayContent }}</h2>
-      <button (click)="closeOverlay()">Close</button>
+    <div class="overlay-container">
+        <div class="overlay-heading">
+            <h2>{{ overlayContent }}</h2>
+        </div>
+        <div class="overlay-content">
+            <form (ngSubmit)="onSubmit()" #overlayForm="ngForm">
+                <div *ngIf="!isStory" class="form-group">
+                  <label for="description">Caption</label>
+                  <textarea id="description" name="description" ngModel required class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Upload Image</label>
+                    <input type="file" id="image" name="image" (change)="onFileSelected($event)" class="form-control" />
+                </div>
+                <div *ngIf="selectedImageUrl" class="image-preview">
+                    <img [src]="selectedImageUrl" alt="Selected Image" class="preview-img" />
+                </div>
+                <div class="form-actions">
+                  <button type="submit" [disabled]="!overlayForm.valid" class="btn btn-primary">Submit</button>
+                  <button type="button" (click)="closeOverlay()" class="btn btn-secondary">Cancel</button>
+                </div>
+              </form>
+        </div>
     </div>
-  </div>
+</div>
