@@ -52,6 +52,12 @@ export class CreatePostsComponent {
       console.log('selected image base 64:', this.selectedImageUrl)
     }
     this.closeOverlay();
+
+    if(this.isStory){
+      // call addStory function with the formData as parameters
+    } else {
+      // call addPost function 
+    }
   }
 
   onFileSelected(event: Event): void {
