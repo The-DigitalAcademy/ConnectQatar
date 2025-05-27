@@ -9,6 +9,7 @@ import { EditProfileComponent } from './Pages/edit-profile/edit-profile.componen
 import { ViewStoryComponent } from './Pages/view-story/view-story.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SuggestedPostsComponent } from './components/suggested-posts/suggested-posts.component';
+import { ChatComponent } from './Pages/chat/chat.component';
 
 export const routes: Routes = [
     {path: 'posts', component: FollowingPostComponent},
@@ -21,4 +22,5 @@ export const routes: Routes = [
     {path:'editProfilePage',component:EditProfileComponent},
     {path:'viewStory',component:ViewStoryComponent},
     {path:'register',component:RegisterComponent},
+    {path: 'chat', component:ChatComponent},
 ];

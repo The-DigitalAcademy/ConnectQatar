@@ -3,7 +3,6 @@ import { PostTypeComponent } from "../post-type/post-type.component";
 import { BottomNavComponent } from "../bottom-nav/bottom-nav.component";
 import { PostCardComponent } from "../post-card/post-card.component";
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-suggested-posts',
