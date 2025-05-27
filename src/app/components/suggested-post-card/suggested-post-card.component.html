@@ -1,1 +1,11 @@
-<p>suggested-post-card works!</p>
+<div class="flex flex-col">
+  <div *ngFor="let user of users" class="mb-8">
+    <div class="flex items-center mb-2">
+      <img [src]="user.profileImage || 'https://via.placeholder.com/32'" alt=".." class="inline-block h-8 w-8 rounded-full mr-2" />
+      <span class="text-white font-bold">{{ user.fullname }}</span>
+    </div>
+
+    <!-- User's posts -->
+   
+  </div>
+</div>

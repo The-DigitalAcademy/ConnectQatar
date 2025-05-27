@@ -11,6 +11,10 @@ export class PostService {
 
   constructor(private http: HttpClient) {}
 
+  getAllUsers(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/users`);
+  }
+
   getPostsWithDetails(): Observable<any[]> {
     return forkJoin({
       posts: this.http.get<any[]>(`${this.baseUrl}/posts`),
