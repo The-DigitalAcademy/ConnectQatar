@@ -14,18 +14,30 @@ export class PostService {
   getPostsWithDetails(): Observable<any[]> {
     return forkJoin({
       posts: this.http.get<any[]>(`${this.baseUrl}/posts`),
-      profiles: this.http.get<any[]>(`${this.baseUrl}/profile`),
+      users: this.http.get<any[]>(`${this.baseUrl}/users`),
       comments: this.http.get<any[]>(`${this.baseUrl}/comments`),
-      likes: this.http.get<any[]>(`${this.baseUrl}/like`)
+      likes: this.http.get<any[]>(`${this.baseUrl}/likes`),
+      friendships: this.http.get<any[]>(`${this.baseUrl}/friendships`)
     }).pipe(
-      map(({ posts, profiles, comments, likes }) => {
+      map(({ posts, users, comments, likes, friendships }) => {
         return posts.map(post => {
-          const profile = profiles.find(p => p.id === post.profileId);
+          // post's author
+          const author = users.find(u => u.id === post.userId);
+
+          //  followings
+          const followingIds = friendships
+            .filter(f => f.followerId === author?.id)
+            .map(f => f.followingId);
+
+          const followings = users.filter(u => followingIds.includes(u.id));
+
           const postComments = comments.filter(comm => comm.postId === post.id);
           const likeObj = likes.find(like => like.postId === post.id);
+
           return {
             post,
-            profile,
+            author,
+            followings,
             comments: postComments,
             likes: likeObj || { count: 0 }
           };

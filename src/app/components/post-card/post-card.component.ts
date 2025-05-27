@@ -16,9 +16,8 @@ export class PostCardComponent implements OnInit {
   constructor(private postService: PostService) {}
 
   ngOnInit() {
-  this.postService.getPostsWithDetails().subscribe({
-    next: (data: any[]) => this.postsWithProfiles = data,
-    error: (err: any) => console.error('Error fetching posts:', err)
-  });
+ this.postService.getPostsWithDetails().subscribe(data => {
+  this.postsWithProfiles = data.reverse();
+});
 }
 }

@@ -13,6 +13,7 @@ import { ViewStoryComponent } from './Pages/view-story/view-story.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SuggestedPostsComponent } from './components/suggested-posts/suggested-posts.component';
 import { ChatComponent } from './Pages/chat/chat.component';
+import { SuggestedPostCardComponent } from './components/suggested-post-card/suggested-post-card.component';
 
 export const routes: Routes = [
     {path: 'posts', component: FollowingPostComponent},
@@ -26,6 +27,7 @@ export const routes: Routes = [
     {path:'viewStory',component:ViewStoryComponent},
     {path:'register',component:RegisterComponent},
     {path: 'chat', component:ChatComponent},
+    {path: 'suggestedPostCard', component:SuggestedPostCardComponent}
 ];
 
 @NgModule({
