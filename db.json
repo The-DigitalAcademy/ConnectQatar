@@ -17,6 +17,12 @@
       "title": "a title",
       "image": "https://images.pexels.com/photos/3016714/pexels-photo-3016714.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
       "profileId": "3"
+    },
+    {
+      "id": "4",
+      "title": "Shaper !!",
+      "image": "https://images.pexels.com/photos/30918865/pexels-photo-30918865/free-photo-of-vintage-film-photography-in-ho-chi-minh-city.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "5"
     }
   ],
   "comments": [
@@ -25,13 +31,17 @@
     { "id": "3", "text": " comment about post 3", "postId": "3" },
     { "id": "4", "text": " comment about post 2", "postId": "2" },
     { "id": "5", "text": "another comment about post 3", "postId": "3" },
-    { "id": "6", "text": "another comment about post 1", "postId": "1" }
+    { "id": "6", "text": "another comment about post 1", "postId": "1" },
+    { "id": "7", "text": "another comment about shaper post ", "postId": "4" }
+
   ],
 
   "like": [
     { "id": "1", "count": 23, "postId": "2" },
     { "id": "2", "count": 23, "postId": "1" },
-    { "id": "3", "count": 31, "postId": "3" }
+    { "id": "3", "count": 31, "postId": "3" },
+    { "id": "4", "count": 231, "postId": "4" }
+
   ],
 
   "user": [
@@ -69,7 +79,7 @@
     },
     {
       "id": "5",
-      "name": "leo",
+      "name": "zizo",
       "image": "https://images.pexels.com/photos/6124236/pexels-photo-6124236.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
       "userId": "5"
     }
