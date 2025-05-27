@@ -8,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class CreatePostsComponent {
 
+  createStory(){
+    console.log('I work')
+  }
+
+  createPost(){
+    console.log('I work too')
+  }
 }
