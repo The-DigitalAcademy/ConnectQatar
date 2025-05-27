@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
-  imports: [UserProfleButtonsComponent, UserProflePostsComponent, UserpHeaderComponent, RouterLink],
+  imports: [UserProfleButtonsComponent, UserProflePostsComponent, UserpHeaderComponent, BottomNavComponent],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css'
 })
