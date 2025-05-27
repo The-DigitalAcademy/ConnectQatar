@@ -25,7 +25,7 @@ export const routes: Routes = [
     {path:'editProfilePage',component:EditProfileComponent},
     {path:'viewStory',component:ViewStoryComponent},
     {path:'register',component:RegisterComponent},
-    {path:'create', component:CreatePostsComponent}
+    {path:'create', component:CreatePostsComponent},
     {path: 'chat', component:ChatComponent},
 ];
 
