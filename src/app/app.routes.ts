@@ -7,6 +7,7 @@ import { UserProfileComponent } from './Pages/user-profile/user-profile.componen
 import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
 import { EditProfileComponent } from './Pages/edit-profile/edit-profile.component';
 import { ViewStoryComponent } from './Pages/view-story/view-story.component';
+import { RegisterComponent } from './components/register/register.component';
 
 export const routes: Routes = [
     {path: 'posts', component: FollowingPostComponent},
@@ -16,6 +17,7 @@ export const routes: Routes = [
     {path:'userProfile',component:UserProfileComponent},
     {path:'webLandingPage',component:LandingPageComponent},
     {path:'editProfilePage',component:EditProfileComponent},
-    {path:'viewStory',component:ViewStoryComponent}
+    {path:'viewStory',component:ViewStoryComponent},
 
+    {path:'register',component:RegisterComponent},
 ];
