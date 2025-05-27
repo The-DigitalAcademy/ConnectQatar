@@ -8,9 +8,11 @@ import { LandingPageComponent } from './Pages/landing-page/landing-page.componen
 import { EditProfileComponent } from './Pages/edit-profile/edit-profile.component';
 import { ViewStoryComponent } from './Pages/view-story/view-story.component';
 import { RegisterComponent } from './components/register/register.component';
+import { SuggestedPostsComponent } from './components/suggested-posts/suggested-posts.component';
 
 export const routes: Routes = [
     {path: 'posts', component: FollowingPostComponent},
+    {path: 'suggestedPosts', component:SuggestedPostsComponent},
     {path:'',redirectTo:'/webLandingPage', pathMatch:'full'},
     {path:'appdashboard',component:AppComponent},
     {path:'login',component:LoginComponent},
@@ -18,6 +20,5 @@ export const routes: Routes = [
     {path:'webLandingPage',component:LandingPageComponent},
     {path:'editProfilePage',component:EditProfileComponent},
     {path:'viewStory',component:ViewStoryComponent},
-
     {path:'register',component:RegisterComponent},
 ];
