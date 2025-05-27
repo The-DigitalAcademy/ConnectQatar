@@ -45,6 +45,12 @@ export class CreatePostsComponent {
 
   onSubmit() {
     console.log('Form submitted');
+    console.log('form caption:', this.formData.caption)
+    console.log('form data:', this.formData)
+
+    if(this.selectedImageUrl){
+      console.log('selected image base 64:', this.selectedImageUrl)
+    }
     this.closeOverlay();
   }
 
