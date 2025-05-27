@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UploadDataService } from '../../services/upload-data.service';
+import { PostRequestInterface } from '../../models/post';
+import { StoryRequestInterface } from '../../models/post';
 @Component({
   selector: 'app-create-posts',
   imports: [CommonModule, FormsModule, HttpClientModule],
@@ -11,9 +13,7 @@ import { UploadDataService } from '../../services/upload-data.service';
 })
 export class CreatePostsComponent {
 
-  constructor(private uploadData: UploadDataService) {
-    console.log('UploadDataService', this.uploadData)
-  }
+  uploadDataService = inject(UploadDataService)
 
   showOverlay: boolean = false
   isStory: boolean = false
@@ -50,35 +50,33 @@ export class CreatePostsComponent {
   }
 
   onSubmit() {
-    console.log('Form submitted');
-    console.log('form caption:', this.formData.caption);
-    console.log('form data:', this.formData);
-  
-    if (this.selectedImageUrl) {
-      console.log('Selected image base 64:', this.selectedImageUrl);
+    console.log(this.selectedImageUrl)
+
+    if (!this.selectedImageUrl) {
+      alert("Thius is  nulllll")
+      return
     }
-  
-    this.closeOverlay();
-  
-    if (this.isStory) {
-      this.uploadData.addStory({ imageUrl: this.selectedImageUrl as string }).subscribe({
-        next: (response) => {
-          console.log('Story created successfully:', response);
-        },
-        error: (error) => {
-          console.error('Error creating story:', error);
-        }
-      });
-    } else {
-      this.uploadData.addPost({ imageUrl: this.selectedImageUrl as string, caption: this.formData.caption }).subscribe({
-        next: (response) => {
-          console.log('Post created successfully:', response);
-        },
-        error: (error) => {
-          console.error('Error creating post:', error);
-        }
-      });
+
+    const newPost: PostRequestInterface = {
+      caption: this.formData.caption,
+      imageUrl: this.selectedImageUrl as string
     }
+
+    const newStory: StoryRequestInterface = {
+      imageUrl: this.selectedImageUrl as string
+    }
+
+    if (this.isStory){
+      this.uploadDataService.addStory(newStory).subscribe(data => {
+        console.log(data)
+      })
+    }else {
+      this.uploadDataService.addPost(newPost).subscribe(data => {
+          console.log(data)
+        })
+    }
+
+    this.closeOverlay()
   }
 
   onFileSelected(event: Event): void {
