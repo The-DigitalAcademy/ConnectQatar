@@ -14,6 +14,11 @@ export class CreatePostsComponent {
   overlayContent: string = ''
   selectedImageUrl: string | ArrayBuffer | null = null
 
+  formData = {
+    caption: '',
+    image: null
+  }
+
   createStory(){
     console.log('I work')
     this.overlayContent = 'New Story'
@@ -31,6 +36,11 @@ export class CreatePostsComponent {
   closeOverlay(){
     this.showOverlay = false;
     this.overlayContent = '';
+    this.formData = {
+      caption: '', 
+      image: null
+    }
+    this.selectedImageUrl = null
   }
 
   onSubmit() {
