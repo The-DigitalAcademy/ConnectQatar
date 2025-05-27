@@ -55,28 +55,35 @@
       "id": "6",
       "text": "another comment about post 1",
       "postId": "1"
-    },
-    {
-      "id": "7",
-      "text": "another comment about shaper post ",
-      "postId": "4"
     }
   ],
   "like": [
     {
+     
       "id": "1",
+     
       "count": 23,
+     
       "postId": "2"
+   
     },
     {
+     
       "id": "2",
+     
       "count": 23,
+     
       "postId": "1"
+   
     },
     {
+     
       "id": "3",
+     
       "count": 31,
+     
       "postId": "3"
+   
     },
     {
       "id": "4",
@@ -202,25 +209,18 @@
       "id": "4",
       "image": "https://images.pexels.com/photos/1628240/pexels-photo-1628240.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
       "profileId": "1"
-    }
-  ],
-  "users": [
-    {
-      "id": "be6b",
-      "fullname": "jhj",
-      "username": "huh",
-      "email": "bongek@gmail.com",
-      "password": "123"
     },
     {
-      "id": "cd1b",
-      "fullname": "jjh",
-      "username": "bo",
-      "email": "bongi@gmail.com",
-      "password": "123"
+      "id": "4de7",
+      "imageUrl": null
+    },
+    {
+      "id": "db58",
+      "imageUrl": null
+    },
+    {
+      "id": "b196",
+      "imageUrl": null
     }
-  ],
-  "profileImage": [
-   
   ]
 }

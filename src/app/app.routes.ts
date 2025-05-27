@@ -1,6 +1,6 @@
 import { Routes,RouterModule } from '@angular/router';
 import { FollowingPostComponent } from './following-post/following-post.component';
-import { NgModule } from '@angular/core';
+import { CreatePostsComponent } from './components/create-posts/create-posts.component';import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -25,6 +25,7 @@ export const routes: Routes = [
     {path:'editProfilePage',component:EditProfileComponent},
     {path:'viewStory',component:ViewStoryComponent},
     {path:'register',component:RegisterComponent},
+    {path:'create', component:CreatePostsComponent}
     {path: 'chat', component:ChatComponent},
 ];
 
