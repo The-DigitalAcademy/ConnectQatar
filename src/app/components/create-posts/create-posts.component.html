@@ -27,3 +27,11 @@
         </div>
     </div>
 </div>
+
+<!-- Overlay -->
+<div *ngIf="showOverlay" class="bg-white">
+    <div class="overlay-content">
+      <h2>{{ overlayContent }}</h2>
+      <button (click)="closeOverlay()">Close</button>
+    </div>
+  </div>
