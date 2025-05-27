@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { UserProfileComponent } from './Pages/user-profile/user-profile.component';
 import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
 import { EditProfileComponent } from './Pages/edit-profile/edit-profile.component';
+import { RegisterComponent } from './components/register/register.component';
 
 export const routes: Routes = [
     {path: 'posts', component: FollowingPostComponent},
@@ -14,5 +15,6 @@ export const routes: Routes = [
     {path:'login',component:LoginComponent},
     {path:'userProfile',component:UserProfileComponent},
     {path:'webLandingPage',component:LandingPageComponent},
-    {path:'editProfilePage',component:EditProfileComponent}
+    {path:'editProfilePage',component:EditProfileComponent},
+    {path:'register',component:RegisterComponent},
 ];
