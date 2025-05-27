@@ -26,21 +26,63 @@
     }
   ],
   "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" },
-    { "id": "3", "text": " comment about post 3", "postId": "3" },
-    { "id": "4", "text": " comment about post 2", "postId": "2" },
-    { "id": "5", "text": "another comment about post 3", "postId": "3" },
-    { "id": "6", "text": "another comment about post 1", "postId": "1" },
-    { "id": "7", "text": "another comment about shaper post ", "postId": "4" }
-
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "3",
+      "text": " comment about post 3",
+      "postId": "3"
+    },
+    {
+      "id": "4",
+      "text": " comment about post 2",
+      "postId": "2"
+    },
+    {
+      "id": "5",
+      "text": "another comment about post 3",
+      "postId": "3"
+    },
+    {
+      "id": "6",
+      "text": "another comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "7",
+      "text": "another comment about shaper post ",
+      "postId": "4"
+    }
   ],
   "like": [
-    { "id": "1", "count": 23, "postId": "2" },
-    { "id": "2", "count": 23, "postId": "1" },
-    { "id": "3", "count": 31, "postId": "3" },
-    { "id": "4", "count": 231, "postId": "4" }
-
+    {
+      "id": "1",
+      "count": 23,
+      "postId": "2"
+    },
+    {
+      "id": "2",
+      "count": 23,
+      "postId": "1"
+    },
+    {
+      "id": "3",
+      "count": 31,
+      "postId": "3"
+    },
+    {
+      "id": "4",
+      "count": 231,
+      "postId": "4"
+    }
   ],
   "user": [
     {
@@ -177,5 +219,8 @@
       "email": "bongi@gmail.com",
       "password": "123"
     }
+  ],
+  "profileImage": [
+   
   ]
 }
