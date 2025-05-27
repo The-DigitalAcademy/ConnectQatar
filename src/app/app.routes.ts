@@ -1,5 +1,8 @@
-import { Routes } from '@angular/router';
+import { Routes,RouterModule } from '@angular/router';
 import { FollowingPostComponent } from './following-post/following-post.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginComponent } from './login/login.component';
 import { AppComponent } from './app.component';
@@ -18,3 +21,17 @@ export const routes: Routes = [
     {path:'editProfilePage',component:EditProfileComponent},
     {path:'register',component:RegisterComponent},
 ];
+
+@NgModule({
+  declarations: [],
+  imports: [
+      CommonModule,
+      ReactiveFormsModule,
+      FormsModule,
+      RouterModule.forRoot(routes)   
+  ],
+  exports: [
+      RouterModule  
+  ]
+})
+export class AppRoutingModule { }
