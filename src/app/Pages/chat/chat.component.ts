@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-story-updates',
+  selector: 'app-chat',
   imports: [RouterLink],
-  templateUrl: './story-updates.component.html',
+  templateUrl: './chat.component.html',
   styles: ``
 })
-export class StoryUpdatesComponent {
+export class ChatComponent {
 
 }
