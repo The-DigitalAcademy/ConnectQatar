@@ -1,14 +1,20 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FormsModule} from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { UploadDataService } from '../../services/upload-data.service';
 @Component({
   selector: 'app-create-posts',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, HttpClientModule],
   templateUrl: './create-posts.component.html',
-  styleUrl: './create-posts.component.css'
+  styleUrl: './create-posts.component.css',
 })
 export class CreatePostsComponent {
+
+  constructor(private uploadData: UploadDataService) {
+    console.log('UploadDataService', this.uploadData)
+  }
+
   showOverlay: boolean = false
   isStory: boolean = false
   overlayContent: string = ''
@@ -45,18 +51,33 @@ export class CreatePostsComponent {
 
   onSubmit() {
     console.log('Form submitted');
-    console.log('form caption:', this.formData.caption)
-    console.log('form data:', this.formData)
-
-    if(this.selectedImageUrl){
-      console.log('selected image base 64:', this.selectedImageUrl)
+    console.log('form caption:', this.formData.caption);
+    console.log('form data:', this.formData);
+  
+    if (this.selectedImageUrl) {
+      console.log('Selected image base 64:', this.selectedImageUrl);
     }
+  
     this.closeOverlay();
-
-    if(this.isStory){
-      // call addStory function with the formData as parameters
+  
+    if (this.isStory) {
+      this.uploadData.addStory({ imageUrl: this.selectedImageUrl as string }).subscribe({
+        next: (response) => {
+          console.log('Story created successfully:', response);
+        },
+        error: (error) => {
+          console.error('Error creating story:', error);
+        }
+      });
     } else {
-      // call addPost function 
+      this.uploadData.addPost({ imageUrl: this.selectedImageUrl as string, caption: this.formData.caption }).subscribe({
+        next: (response) => {
+          console.log('Post created successfully:', response);
+        },
+        error: (error) => {
+          console.error('Error creating post:', error);
+        }
+      });
     }
   }
 
@@ -66,7 +87,7 @@ export class CreatePostsComponent {
       const file = input.files[0];
       const reader = new FileReader();
       reader.onload = () => {
-        this.selectedImageUrl = reader.result;
+        this.selectedImageUrl = reader.result as string;
       };
       reader.readAsDataURL(file);
     }

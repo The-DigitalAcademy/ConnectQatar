@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UploadDataService {
 
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = 'http://localhost:8000';
 
   constructor(private http: HttpClient) {}
 
@@ -21,6 +21,6 @@ export class UploadDataService {
   addStory(story: {
     imageUrl: string;
   }): Observable<any> {
-    return this.http.post(`${this.baseUrl}/stories`, story);
+    return this.http.post(`${this.baseUrl}/storyUpdate`, story);
   }
 }
