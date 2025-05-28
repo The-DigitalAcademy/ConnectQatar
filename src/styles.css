@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
 * {
-    background: #21313e;
+    background: #405d73;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

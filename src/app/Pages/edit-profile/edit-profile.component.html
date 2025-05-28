@@ -1,4 +1,4 @@
-<div class="justify-self-center " *ngIf="user">
+<div class="justify-self-center ">
     <div class="justify-self-center ">
         <h2 class="text-center fixed top-0 left-0 p-2 bg-white/30 backdrop-blur-md flex gap-3 text-2xl">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle" routerLink="/userProfile" viewBox="0 0 16 16">
@@ -7,9 +7,9 @@
             Edit Profile</h2>
         <div class="mt-15 flex flex-col hover:cursor-pointer">
           <div class="justify-self-center ">
-            <img [src]="url" class="w-15 h-15 border rounded-full flex justify-self-center " *ngIf="url"/>
+            <img src="https://images.pexels.com/photos/718978/pexels-photo-718978.jpeg?auto=compress&cs=tinysrgb&w=800" class="w-15 h-15 border rounded-full flex justify-self-center "/>
           </div>
-          <input type="file" (change)="onSelectFile($event)" class="mt-5 border" />
+          <p class="mt-2 mb-5 flex justify-center items-center justify-self-center ">Change Profile Picture</p>
         </div>
       </div>
 
@@ -19,19 +19,13 @@
               <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
                 Name
               </label>
-              <input class="border rounded w-full py-2 px-3 text-gray-700 " id="name" type="text" placeholder="{{user.fullname}}">
-            </div>
-            <div class="mb-4">
-              <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                Username
-              </label>
-              <input class="border rounded w-full py-2 px-3 text-gray-700 " id="username" type="text" placeholder="{{user.username}}">
+              <input class="border rounded w-full py-2 px-3 text-gray-700 " id="name" type="text" placeholder="Username">
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
                   Email
                 </label>
-                <input class="border rounded w-full py-2 px-3 text-gray-700 " id="email" type="text" placeholder="{{user.email}}">
+                <input class="border rounded w-full py-2 px-3 text-gray-700 " id="email" type="text" placeholder="Email">
               </div>
               <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="gender">

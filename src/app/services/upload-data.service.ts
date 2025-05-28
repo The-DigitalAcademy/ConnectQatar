@@ -7,7 +7,7 @@ import { PostRequestInterface } from '../models/post';
   providedIn: 'root',
 })
 export class UploadDataService {
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = 'http://localhost:8000';
 
   constructor(private http: HttpClient) {}
 
