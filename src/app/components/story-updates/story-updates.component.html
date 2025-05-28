@@ -4,7 +4,7 @@
             src="https://images.pexels.com/photos/11238858/pexels-photo-11238858.png?auto=compress&cs=tinysrgb&w=1200&lazy=load"
             alt="user profile">
         <div class=" mt-[-1.5rem] ml-[3rem] z-22">
-            <button><i class="bi bi-plus-circle-fill bg-transparent text-white text-2xl "></i></button>
+            <button (click)="createStory()"><i class="bi bi-plus-circle-fill bg-transparent text-white text-2xl "></i></button>
         </div>
     </div>
     
@@ -50,5 +50,34 @@
             </a>
     </div>
 </div>
-    
+</div>
+
+<!-- Overlay -->
+<div *ngIf="showOverlay" class="bg-white text-white fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="bg-white w-full max-w-xl rounded-lg shadow-lg p-6">
+      <div class="text-center mb-6">
+        <h2 class="text-2xl font-bold">{{ overlayContent }}</h2>
+      </div>
+      <form (ngSubmit)="onSubmit()" #overlayForm="ngForm" class="space-y-4">
+        <div *ngIf="!isStory" class="form-group">
+          <label for="caption" class="block font-medium mb-1">Caption</label>
+          <textarea id="caption" name="caption" [(ngModel)]="formData.caption" required class="w-full border rounded p-2"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="image" class="block font-medium mb-1">Upload Image</label>
+          <input type="file" id="image" name="image" (change)="onFileSelected($event)" class="w-full" />
+        </div>
+        <div *ngIf="selectedImageUrl" class="image-preview">
+          <img [src]="selectedImageUrl" alt="Selected Image" class="w-full max-h-64 object-cover rounded" />
+        </div>
+        <div class="flex justify-between mt-4">
+          <button type="submit" [disabled]="!overlayForm.valid" class="bg-white text-white border border-white px-4 py-2 rounded hover:bg-gray-100 disabled:opacity-50">
+            Submit
+          </button>
+          <button type="button" (click)="closeOverlay()" class="bg-white text-white border border-white px-4 py-2 rounded hover:bg-gray-100">
+            Cancel
+          </button>
+        </div>
+      </form>
     </div>
+  </div>

@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UploadDataService } from '../../services/upload-data.service';
 import { PostRequestInterface } from '../../models/post';
 import { StoryRequestInterface } from '../../models/post';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-create-posts',
   imports: [CommonModule, FormsModule, HttpClientModule],
@@ -14,6 +16,7 @@ import { StoryRequestInterface } from '../../models/post';
 export class CreatePostsComponent {
 
   uploadDataService = inject(UploadDataService)
+  snackBar = inject(MatSnackBar)
 
   showOverlay: boolean = false
   isStory: boolean = false
@@ -68,10 +71,17 @@ export class CreatePostsComponent {
 
     if (this.isStory){
       this.uploadDataService.addStory(newStory).subscribe(data => {
+        this.snackBar.open('Story posted successfully!', 'Close', { 
+          duration: 3000,
+          horizontalPosition: 'center', verticalPosition: 'top'
+         });
         console.log(data)
       })
     }else {
       this.uploadDataService.addPost(newPost).subscribe(data => {
+        this.snackBar.open('Post created successfully!', 'Close', { 
+          duration: 3000,
+          horizontalPosition: 'center', verticalPosition: 'top' });
           console.log(data)
         })
     }
