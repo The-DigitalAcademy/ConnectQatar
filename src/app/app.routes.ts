@@ -23,7 +23,7 @@ export const routes: Routes = [
     {path:'userProfile',component:UserProfileComponent},
     {path:'webLandingPage',component:LandingPageComponent},
     {path:'editProfilePage',component:EditProfileComponent},
-    {path:'viewStory',component:ViewStoryComponent},
+    {path:'viewStory/:id',component:ViewStoryComponent},
     {path:'register',component:RegisterComponent},
     {path:'create', component:CreatePostsComponent},
     {path: 'chat', component:ChatComponent},
