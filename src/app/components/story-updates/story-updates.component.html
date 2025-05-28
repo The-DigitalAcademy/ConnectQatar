@@ -1,55 +1,24 @@
-<div class=" p-1 m-1 flex justify-center items-center flex-row ">
-    <div class="h-auto w-20 rounded-full ">
-        <img class="rounded-full h-15 w-15"
-            src="https://images.pexels.com/photos/11238858/pexels-photo-11238858.png?auto=compress&cs=tinysrgb&w=1200&lazy=load"
-            alt="user profile">
-        <div class=" mt-[-1.5rem] ml-[3rem] z-22">
-            <button (click)="createStory()"><i class="bi bi-plus-circle-fill bg-transparent text-white text-2xl "></i></button>
-        </div>
+<!-- Story Updates List -->
+<div class="p-1 m-1 flex justify-center items-center flex-row">
+  <div class="h-auto w-20 rounded-full">
+    <img class="rounded-full h-15 w-15"
+      src="https://images.pexels.com/photos/11238858/pexels-photo-11238858.png?auto=compress&cs=tinysrgb&w=1200&lazy=load"
+      alt="user profile">
+    <div class="mt-[-1.5rem] ml-[3rem] z-22">
+      <button (click)="createStory()"><i class="bi bi-plus-circle-fill bg-transparent text-white text-2xl"></i></button>
     </div>
-    
-    <div class="userStories flex w-full gap-1 overflow-x-auto">
+  </div>
 
-    <div class="h-auto flex-none w-20 rounded-full ml-3 hover:animate-pulse">
-        <a routerLink="/viewStory">
+  <div class="userStories flex w-full gap-1 overflow-x-auto">
+    <div *ngFor="let story of stories" class="h-auto flex-none w-20 rounded-full ml-3 hover:animate-pulse">
+      <!-- Pass the story id as a route parameter -->
+      <a [routerLink]="['/viewStory', story.id]">
         <img class="rounded-full h-15 w-15"
-            src="https://images.pexels.com/photos/7243167/pexels-photo-7243167.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load"
-            alt="user profile">
-            </a>
+          [src]="story.image"
+          alt="user story">
+      </a>
     </div>
-    
-    <div class="h-auto flex-none w-20 rounded-full hover:animate-pulse">
-        <a routerLink="/viewStory">
-        <img class="rounded-full h-15 w-15" 
-            src="https://images.pexels.com/photos/30091518/pexels-photo-30091518/free-photo-of-elegant-woman-putting-on-earrings-outdoors.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load"
-            alt="user profile">
-            </a>
-    </div>
-    
-    <div class="h-auto flex-none w-20 rounded-full hover:animate-pulse">
-        <a routerLink="/viewStory">
-        <img class="rounded-full h-15 w-15"
-            src="https://images.pexels.com/photos/5499973/pexels-photo-5499973.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load"
-            alt="user profile">
-        </a>
-    </div>
-
-    <div class="h-auto flex-none w-20 rounded-full hover:animate-pulse">
-        <a routerLink="/viewStory">
-        <img class="rounded-full h-15 w-15"
-            src="https://images.pexels.com/photos/10518488/pexels-photo-10518488.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load"
-            alt="user profile">
-            </a>
-    </div>
-
-    <div class="h-auto flex-none w-20 rounded-full hover:animate-pulse">
-        <a routerLink="/viewStory">
-        <img class="rounded-full h-15 w-15"
-            src="https://images.pexels.com/photos/14711524/pexels-photo-14711524.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load"
-            alt="user profile">
-            </a>
-    </div>
-</div>
+  </div>
 </div>
 
 <!-- Overlay -->

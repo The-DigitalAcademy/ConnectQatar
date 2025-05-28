@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './story-updates.component.html',
   styles: ``
 })
-export class StoryUpdatesComponent {
+export class StoryUpdatesComponent implements OnInit {
 
   uploadDataService = inject(UploadDataService)
   snackBar = inject(MatSnackBar)
@@ -28,8 +28,25 @@ export class StoryUpdatesComponent {
   overlayContent: string = ''
   selectedImageUrl: string | ArrayBuffer | null = null
 
+  stories: any[] = [];
+  selectedProfileId: string = '3'; // Set this dynamically as needed
+
+  ngOnInit() {
+    this.loadStoriesForProfile(this.selectedProfileId);
+  }
+
+  loadStoriesForProfile(profileId: string) {
+    this.uploadDataService.getStoriesByProfileId(profileId).subscribe(
+      (data) => {
+        this.stories = data;
+      },
+      (error) => {
+        console.error('Error fetching stories:', error);
+      }
+    );
+  }
+
   createStory(){
-    console.log('i work')
     this.overlayContent = 'New story'
     this.isStory = true
     this.showOverlay = true
@@ -42,29 +59,27 @@ export class StoryUpdatesComponent {
   }
 
   onSubmit() {
-      console.log(this.selectedImageUrl)
-  
-      if (!this.selectedImageUrl) {
-        alert("Thius is  nulllll")
-        return
-      }
-
-      const newStory: StoryRequestInterface = {
-        imageUrl: this.selectedImageUrl as string
-      }
-  
-      if (this.isStory){
-        this.uploadDataService.addStory(newStory).subscribe(data => {
-          this.snackBar.open('Story posted successfully!', 'Close', { 
-            duration: 3000,
-            horizontalPosition: 'center', verticalPosition: 'top'
-           });
-          console.log(data)
-        })
-  
-      this.closeOverlay()
+    if (!this.selectedImageUrl) {
+      alert("Image is required")
+      return
     }
 
+    const newStory: StoryRequestInterface = {
+      imageUrl: this.selectedImageUrl as string
+    }
+
+    if (this.isStory){
+      this.uploadDataService.addStory(newStory).subscribe(data => {
+        this.snackBar.open('Story posted successfully!', 'Close', { 
+          duration: 3000,
+          horizontalPosition: 'center', verticalPosition: 'top'
+        });
+        // Refresh stories after posting
+        this.loadStoriesForProfile(this.selectedProfileId);
+      })
+
+      this.closeOverlay()
+    }
   }
 
   onFileSelected(event: Event): void {

@@ -15,6 +15,14 @@ export class UploadDataService {
     return this.http.post(`${this.baseUrl}/posts`, post);
   }
 
+  getStoryById(id: string): Observable<any> {
+  return this.http.get<any>(`${this.baseUrl}/storyUpdate/${id}`);
+}
+
+  getStoriesByProfileId(profileId: string): Observable<any[]> {
+  return this.http.get<any[]>(`${this.baseUrl}/storyUpdate?profileId=${profileId}`);
+}
+
   addStory(story: { imageUrl: string }): Observable<any> {
     return this.http.post(`${this.baseUrl}/storyUpdate`, story);
   }
