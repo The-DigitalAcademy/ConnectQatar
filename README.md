@@ -1,59 +1,83 @@
-# Qatarconnect
+# QatarConnect 🕌
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
+**QatarConnect** is a full-featured social media clone built with Angular and Tailwind CSS, powered by a mock JSON server backend. The platform replicates key social media functionalities such as user authentication, posts, stories, following system, messaging, and feed filtering.
 
-## Development server
+---
 
-To start a local development server, run:
+## ✨ Features & User Stories
 
-```bash
-ng serve
-```
+### 🔐 Authentication
+- Users can **register** and **log in**.
+- Sessions are securely maintained.
+- **Token refresh** on new post creation for improved UX.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 📝 Content Creation
+- Users can **create posts** and **upload stories**.
+- Posts appear in a **Global Feed** and **Following Feed**.
 
-## Code scaffolding
+### 👥 Social Features
+- **Follow/unfollow** other users.
+- View feed filtered by followed users.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 💬 Messaging
+- Send and receive **direct messages**.
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🛠️ Tech Stack
 
-```bash
-ng generate --help
-```
+| Tool               | Purpose                            |
+|--------------------|------------------------------------|
+| **Angular**        | Frontend framework                 |
+| **TypeScript**     | Programming language               |
+| **Tailwind CSS**   | Utility-first CSS framework        |
+| **Angular Material** | UI component library              |
+| **JSON Server**    | Mock REST API backend              |
+| **[Tool Name]**    | Project management (e.g., Trello, Notion, Jira) |
 
-## Building
+---
 
-To build the project run:
+## 🧰 Setup Instructions
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### 1. Clone the Repository
 
 ```bash
-ng e2e
+git clone https://github.com/The-DigitalAcademy/ConnectQatar.git
+cd ConnectQatar
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### 2. Install Dependancies
 
-## Additional Resources
+```bash
+npm install
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### 3. Add Angualar Material UI
+
+```bash
+ng add @angular/material
+```
+
+### 4. Start and Run JSON server (Mock Backend)
+  ##### a. Ensure you have a db.json file in your root
+  ##### b. Run JSON server
+```bash
+npx json-server --watch db.json --port 3000
+```
+### 5. Start Angular Development Server
+```bash
+ng serve -o
+```
+## 🗂️ Project Management
+
+We use **Trello** to organize tasks:
+
+- **Backlog**
+- **To Do**
+- **In Progress**
+- **Review**
+- **Done**
+
+---
+
+> Built with ❤️ by the QatarConnect team.
