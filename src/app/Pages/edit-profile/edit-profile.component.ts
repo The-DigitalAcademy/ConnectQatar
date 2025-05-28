@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ImageServiceService, ProfileImage } from '../../services/image-service.service';
 import { CommonModule } from '@angular/common';
+import { AuthService, User } from '../../services/auth.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-profile',
-  imports: [RouterLink,CommonModule],
+  imports: [RouterLink,CommonModule,FormsModule],
   templateUrl: './edit-profile.component.html',
   styleUrl: './edit-profile.component.css'
 })
@@ -15,10 +17,18 @@ export class EditProfileComponent {
   userId!: number;
   user: any = null;
 
-  constructor(private imageService: ImageServiceService) {}
+  constructor(private imageService: ImageServiceService,private authService: AuthService) {}
 
+  updatedUser:User ={
+    fullname:'',
+    username:'',
+    email:'',
+    password:''
+  };
   ngOnInit(): void {
     const userStr = localStorage.getItem('currentUser');
+    const currentUser = this.authService.getCurrentUser();
+
     if (userStr) {
       const user = JSON.parse(userStr);
       this.user = user;
@@ -34,6 +44,11 @@ export class EditProfileComponent {
       this.loadImage();
     } else {
       console.error('No user found in localStorage!');
+    }
+
+    if(currentUser){
+      this.updatedUser ={...currentUser};
+      this.userId = currentUser.id || 0;
     }
   }
 
@@ -79,5 +94,20 @@ export class EditProfileComponent {
 
   saveImageToLocalStorage(userId: number, image: string): void {
     localStorage.setItem(`profileImage_${userId}`, image);
+  }
+
+  onEdit():void{
+    this.authService.editUserProfile(this.updatedUser).subscribe({
+
+      next:(updatingUser) =>{
+        alert ('Profile updated successfully');
+        this.updatedUser = updatingUser;
+      },
+
+      error:(err) =>{
+        console.error('Update Failed: ',err);
+        alert('Failed to update user profile');
+      }
+    });
   }
 }
