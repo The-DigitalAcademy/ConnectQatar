@@ -1,0 +1,18 @@
+<div *ngFor="let user of usersWithPosts; trackBy: trackByUserId" class="shadow p-0 bottom-20 h-auto">
+  <div class="flex items-center rounded-full mt-5 ml-2">
+    <img class="rounded-full h-8 w-8" alt=".." [src]="user.image" [alt]="user.name + ' profile'" />
+    <h1 class="text-white text-m m-2 font-thin">{{ user.name }}</h1>
+  </div>
+
+  <ng-container *ngIf="user.posts && user.posts.length > 0">
+    <div class="h-fit w-full justify-center items-center mt-2">
+      <img [src]="user.posts[0].image" alt=".." [alt]="user.posts[0].title + ' image'" />
+    </div>
+
+    <div class="flex flex-row items-center gap-2 pt-2 pb-2 ml-2">
+      <p class="text-white text-lg font-bold">{{ user.name }}</p>
+      <p class="text-white">{{ user.posts[0].title }}</p>
+    </div>
+
+  </ng-container>
+</div>
