@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { UploadDataService } from '../../services/upload-data.service';
 import { StoryRequestInterface } from '../../models/post';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-story-updates',
@@ -15,6 +16,7 @@ import { StoryRequestInterface } from '../../models/post';
 export class StoryUpdatesComponent {
 
   uploadDataService = inject(UploadDataService)
+  snackBar = inject(MatSnackBar)
 
   formData = {
     caption: '',
@@ -53,6 +55,10 @@ export class StoryUpdatesComponent {
   
       if (this.isStory){
         this.uploadDataService.addStory(newStory).subscribe(data => {
+          this.snackBar.open('Story posted successfully!', 'Close', { 
+            duration: 3000,
+            horizontalPosition: 'center', verticalPosition: 'top'
+           });
           console.log(data)
         })
   
