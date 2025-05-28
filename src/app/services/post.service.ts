@@ -7,6 +7,9 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PostService {
+  getAllUsers() {
+    throw new Error('Method not implemented.');
+  }
   private baseUrl = 'http://localhost:3000'; 
 
   constructor(private http: HttpClient) {}
