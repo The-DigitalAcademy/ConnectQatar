@@ -33,7 +33,7 @@
 | **Tailwind CSS**   | Utility-first CSS framework        |
 | **Angular Material** | UI component library              |
 | **JSON Server**    | Mock REST API backend              |
-| **[Tool Name]**    | Project management (e.g., Trello, Notion, Jira) |
+| **Trello**    | Project management  |
 
 ---
 
