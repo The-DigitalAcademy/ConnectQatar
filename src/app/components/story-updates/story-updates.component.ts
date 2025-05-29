@@ -63,21 +63,24 @@ export class StoryUpdatesComponent implements OnInit {
       alert("Image is required")
       return
     }
+      console.log(this.selectedImageUrl)
 
-    const newStory: StoryRequestInterface = {
-      imageUrl: this.selectedImageUrl as string
-    }
+      let user = JSON.parse(localStorage.getItem('currentUser') ?? '{}');
 
-    if (this.isStory){
-      this.uploadDataService.addStory(newStory).subscribe(data => {
-        this.snackBar.open('Story posted successfully!', 'Close', { 
-          duration: 3000,
-          horizontalPosition: 'center', verticalPosition: 'top'
-        });
-        // Refresh stories after posting
-        this.loadStoriesForProfile(this.selectedProfileId);
-      })
-
+      const newStory: StoryRequestInterface = {
+        userId: user.id, 
+        imageUrl: this.selectedImageUrl as string
+      }
+  
+      if (this.isStory){
+        this.uploadDataService.addStory(newStory).subscribe(data => {
+          this.snackBar.open('Story posted successfully!', 'Close', { 
+            duration: 3000,
+            horizontalPosition: 'center', verticalPosition: 'top'
+           });
+          console.log(data)
+        })
+  
       this.closeOverlay()
     }
   }
