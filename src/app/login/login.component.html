@@ -5,7 +5,7 @@
         <h2>Login</h2>
     </div>
     <div class=" w-full p-5 shadow-2xl">
-    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="bg-amber-50">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="">
         <label>Username:
             <div class="m-3">
                 <input class="border border-stone-700 p-2 rounded w-full" placeholder="username" formControlName="username" />
@@ -18,7 +18,7 @@
             </div>
         </label>
         <div>
-            <button class="rounded-full border  border-stone-700 p-2 w-full m-3" type="submit" [disabled]="loginForm.invalid">Login</button>
+            <button class="rounded-full border hover:bg-blue-900 hover:border-none border-stone-700 p-2 w-full my-4" type="submit" [disabled]="loginForm.invalid">Login</button>
         </div>
     </form>
 </div>
