@@ -14,7 +14,6 @@ import { AuthService } from '../services/auth.service';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-
   loginForm: FormGroup;
   message = '';
 
@@ -34,7 +33,7 @@ export class LoginComponent {
       const { username, password } = this.loginForm.value;
       this.authService.login(username, password).subscribe((success) => {
         if (success) {
-          this.message = 'Login successful! Redirecting...';
+          this.message = 'Successfully Signed In! Redirecting...';
           setTimeout(() => this.router.navigate(['/posts']), 1000);
         } else {
           this.message = 'Invalid username or password.';
