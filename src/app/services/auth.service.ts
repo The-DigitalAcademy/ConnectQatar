@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, tap, map } from 'rxjs';
 
 export interface User {
+  id?: number;
   fullname: string;
   username: string;
   email: string;
@@ -24,21 +25,21 @@ export class AuthService {
   }
 
   signup(user: User) {
-    // Save to server
+    
     return this.http.post<User>(this.apiUrl, user).pipe(
       tap(() => {
-        // You might want to auto-login after signup here or just notify success
+        
       })
     );
   }
 
   login(username: string, password: string) {
-    // json-server doesn't support login, so simulate by fetching all users & checking
+    
     return this.http.get<User[]>(`${this.apiUrl}?username=${username}`).pipe(
       map(users => {
         const user = users[0];
         if (user && user.password === password) {
-          // Save token in localStorage (mock token)
+         
           localStorage.setItem('token', 'mock-jwt-token');
           localStorage.setItem('currentUser', JSON.stringify(user));
           this._isLoggedIn.next(true);
@@ -59,5 +60,18 @@ export class AuthService {
   getCurrentUser(): User | null {
     const userJson = localStorage.getItem('currentUser');
     return userJson ? JSON.parse(userJson) : null;
+  }
+
+   editUserProfile(updatedUser: User): Observable<User> {
+    const currentUser = this.getCurrentUser();
+
+    if (!currentUser) throw new Error('No user is currently logged in');
+    if (!updatedUser.id) throw new Error('User ID is missing'); 
+
+    return this.http.put<User>(`${this.apiUrl}/${updatedUser.id}`, updatedUser).pipe( 
+      tap(user => {
+        localStorage.setItem('currentUser', JSON.stringify(user)); 
+      })
+    );
   }
 }

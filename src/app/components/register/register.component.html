@@ -1,82 +1,48 @@
-<!-- <div class="m-auto w-auto h-screen flex justify-center  mb-20 mt-80 ">
-    <div>
-        <svg height="100" id="svg8" version="1.1" viewBox="0 0 135.46666 135.46667" width="300"
-            xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
-            xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-            xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink">
-            <defs id="defs2">
-                <linearGradient id="linearGradient1019">
-                    <stop id="stop1023" offset="0" style="stop-color:#9e65cc;stop-opacity:1;" />
-                    <stop id="stop1032" offset="0.63219464" style="stop-color:#9f69b5;stop-opacity:1;" />
-                    <stop id="stop1025" offset="1" style="stop-color:#c49f68;stop-opacity:1" />
-                </linearGradient>
-                <linearGradient gradientUnits="userSpaceOnUse" id="linearGradient1021" x1="67.892952" x2="68.55896"
-                    xlink:href="#linearGradient1019" y1="7.0244989" y2="131.49698" />
-            </defs>
-            <g id="layer1">
-                <circle cx="67.73333" cy="67.73333" id="path848" r="67.20417"
-                    style="fill:url(#linearGradient1021);stroke:none;stroke-width:1.05833332;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1" />
-                <g id="g997" style="stroke-width:0.728196"
-                    transform="matrix(1.3732564,0,0,1.3732564,-24.516897,-25.084667)">
-                    <rect height="56.097252" id="rect980" ry="12.936194"
-                        style="fill:none;stroke:#ffffff;stroke-width:3.85338;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
-                        width="56.097252" x="39.127632" y="39.54108" />
-                    <circle cx="67.176254" cy="67.589706" id="path982" r="11.477627"
-                        style="fill:none;stroke:#ffffff;stroke-width:3.85338;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
-                    <circle cx="84.362976" cy="51.356014" id="path984" r="3.5934544"
-                        style="fill:#ffffff;stroke:none;stroke-width:0.963346;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
-                </g>
-            </g>
-        </svg>
-        <h1 class="text-3xl text-center p-3 pt-16 font-serif ">Register with us</h1>
-        <div>
-            <div class="text-center pt-20">
-                <div class="text-gray-500"> <input class=" pl-2 text-1xl " type="name" name="details"
-                        placeholder=" your name and surname please"></div>
-                <div class="text-gray-400"> <input class=" rounded-1xl m-3 pl-2 text-1xl" type="username"
-                        name=" usernameInput " placeholder=" username please">
-                </div>
-                <div class="text-gray-500"> <input class=" pl-2 text-1xl  " type="email" name="email"
-                    placeholder=" Your email please"></div>
-                <div class="text-gray-400"> <input class=" rounded-1xl m-3 pl-2 text-1xl" type="password"
-                    name=" password " placeholder=" your Password please">
-            </div>
-                <div>
-                    <button class="  font-serif text-blue-50 text-2xl p-2  rounded-4xl w-30 mt-6 pl-4  h-10 pb-5 hover:bg-neutral-500 "
-                        type="submit">register</button>
+<div class="h-screen w-full m-auto flex flex-col text-white text-2xl p-5 justify-center items-center">
 
+    <h2 class="text-center mb-10 text-5xl font-light text-white">Signup</h2>
+
+    <div class="flex p-1 flex-col justify-center w-full items-center shadow-2xl text-white">
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <label>Full Name:
+                <div class="border border-stone-700 p-2 w-full">
+                    <input formControlName="fullname" />
                 </div>
+            </label>
+
+            <label>Username:
+                <div class="border border-stone-700 p-2 w-full">
+                    <input formControlName="username" />
+                </div>
+            </label>
+
+            <label>Email:
+                <div class="border border-stone-700 p-2 w-full">
+                    <input formControlName="email" />
+                </div>
+            </label>
+
+            <label>Password:
+                <div class="border border-stone-700 p-2 w-full">
+                    <input type="password" formControlName="password" />
+                </div>
+            </label>
+
+            <label>Confirm Password:
+                <div class="border border-stone-700 p-2 w-full">
+                    <input type="password" formControlName="confirmPassword" />
+                </div>
+            </label>
+
+            <div class="flex justify-center items-center mt-5">
+                <button class="rounded-full border  border-stone-700 p-2 w-full m-3" type="submit"
+                    [disabled]="signupForm.invalid">Signup</button>
 
             </div>
-        </div> -->
+        </form>
 
+        <div *ngIf="message">{{ message }}</div>
 
-    <h2>Signup</h2>
-    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="bg-amber-50 border justify-self-center">
-      <label>Full Name:
-        <input formControlName="fullname" />
-      </label><br />
+    </div>
 
-      <label>Username:
-        <input formControlName="username" />
-      </label><br />
-
-      <label>Email:
-        <input formControlName="email" />
-      </label><br />
-
-      <label>Password:
-        <input type="password" formControlName="password" />
-      </label><br />
-
-      <label>Confirm Password:
-        <input type="password" formControlName="confirmPassword" />
-      </label><br />
-
-      <button type="submit" [disabled]="signupForm.invalid" >Signup</button>
-    </form>
-
-    <div *ngIf="message">{{ message }}</div>
-
+</div>

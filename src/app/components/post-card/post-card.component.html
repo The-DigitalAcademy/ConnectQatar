@@ -1,6 +1,9 @@
 <div *ngFor="let item of postsWithProfiles" class="shadow p-0 bottom-20 h-auto">
   <div class="flex items-center rounded-full mt-5 ml-2">
-    <img class="rounded-full h-8 w-8" [src]="item.profile.image" alt="user profile" />
+    <!-- Profile image is now clickable and navigates to the user's profile page -->
+    <a [routerLink]="['/userProfile', item.profile.id]">
+      <img class="rounded-full h-8 w-8" [src]="item.profile.image" alt="user profile" />
+    </a>
     <h1 class="text-white text-m m-2 font-thin">{{ item.profile.name }}</h1>
   </div>
 

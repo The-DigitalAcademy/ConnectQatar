@@ -56,16 +56,22 @@ export class CreatePostsComponent {
     console.log(this.selectedImageUrl)
 
     if (!this.selectedImageUrl) {
-      alert("Thius is  nulllll")
+      alert("Please select an image to upload.");
       return
     }
 
+    let user = JSON.parse(localStorage.getItem('currentUser') ?? '{}');
+
+    console.log('User:'+ user);
+
     const newPost: PostRequestInterface = {
+      userId: user.id,
       caption: this.formData.caption,
       imageUrl: this.selectedImageUrl as string
     }
 
     const newStory: StoryRequestInterface = {
+      userId: user.id,
       imageUrl: this.selectedImageUrl as string
     }
 
