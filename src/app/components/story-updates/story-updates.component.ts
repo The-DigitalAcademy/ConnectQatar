@@ -49,7 +49,10 @@ export class StoryUpdatesComponent {
         return
       }
 
+      let user = JSON.parse(localStorage.getItem('currentUser') ?? '{}');
+
       const newStory: StoryRequestInterface = {
+        userId: user.id, 
         imageUrl: this.selectedImageUrl as string
       }
   
