@@ -47,4 +47,17 @@ export class SuggestedPostCardComponent implements OnInit {
   }
 
   trackByUserId = (_: number, item: Profile & { posts: Post[] }) => item.id;
+  followedIds = new Set<string>();
+
+toggleFollow(profile: Profile) {
+  if (this.followedIds.has(profile.id)) {
+    this.followedIds.delete(profile.id);
+  } else {
+    this.followedIds.add(profile.id);
+  }
+}
+
+isFollowed(profile: Profile): boolean {
+  return this.followedIds.has(profile.id);
+}
 }
