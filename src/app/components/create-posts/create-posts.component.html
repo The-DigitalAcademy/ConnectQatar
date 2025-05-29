@@ -17,7 +17,7 @@
 </div>
 
 <!-- Overlay -->
-<div *ngIf="showOverlay" class=" text-white fixed inset-0 z-50 flex items-center justify-center p-4">
+<div *ngIf="showOverlay" class=" text-white fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#21313e]">
   <div class=" w-full max-w-xl rounded-lg shadow-lg p-6">
     <div class="text-center mb-6">
       <h2 class="text-2xl font-bold">{{ overlayContent }}</h2>
@@ -35,10 +35,10 @@
         <img [src]="selectedImageUrl" alt="Selected Image" class="w-full max-h-64 object-cover rounded" />
       </div>
       <div class="flex justify-between mt-4">
-        <button type="submit" [disabled]="!overlayForm.valid" class="bg-white text-white border border-white px-4 py-2 rounded hover:bg-gray-100 disabled:opacity-50">
+        <button type="submit" [disabled]="!overlayForm.valid" class="bg-white text-[#21313e] border border-white px-4 py-2 rounded-full hover:bg-gray-100 disabled:opacity-50">
           Submit
         </button>
-        <button type="button" (click)="closeOverlay()" class="bg-white text-white border border-white px-4 py-2 rounded hover:bg-gray-100">
+        <button type="button" (click)="closeOverlay()" class="bg-white text-[#21313e] border border-white px-4 py-2 rounded-full hover:bg-gray-100">
           Cancel
         </button>
       </div>
