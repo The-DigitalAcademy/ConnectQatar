@@ -1,7 +1,6 @@
-<div *ngFor="let item of postsWithProfiles" class="shadow p-0 bottom-20 h-auto">
+<div *ngFor="let item of postsWithProfiles" class="shadow p-0 mb-20 h-auto">
   <div class="flex items-center rounded-full mt-5 ml-2">
-    <!-- Profile image is now clickable and navigates to the user's profile page -->
-    <a [routerLink]="['/userProfile', item.profile.id]">
+    <a routerLink="/userProfile">
       <img class="rounded-full h-8 w-8" [src]="item.profile.image" alt="user profile" />
     </a>
     <h1 class="text-white text-m m-2 font-thin">{{ item.profile.name }}</h1>
@@ -16,14 +15,5 @@
     <p class="text-white">{{ item.post.title }}</p>
   </div>
 
-  <div class="flex gap-4 justify-center  text-white ml-2">
-    <button class="border border-blue-500 flex-1 rounded-full p-2 w-40">
-      <i class="bi bi-hand-thumbs-up text-center justify-center items-center flex-row text-white text-2xl"></i>
-       {{ item.likes?.count || 0 }} Likes
-    </button>
-    <button class="border border-blue-500 flex-1 rounded-full p-2 w-40">
-      <i class="bi bi-chat-fill text-white text-2xl"></i>
-       {{ item.comments?.length || 0 }} Comments
-    </button>
-  </div>
+ 
 </div>

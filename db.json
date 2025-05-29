@@ -7,6 +7,12 @@
       "profileId": "1"
     },
     {
+      "id": "5",
+      "title": "chill bro!",
+      "image": "https://images.pexels.com/photos/16095163/pexels-photo-16095163/free-photo-of-design-uroboros-snake-ring-on-finger.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      "profileId": "6"
+    },
+    {
       "id": "2",
       "title": "a litle bit of this and that",
       "image": "https://images.pexels.com/photos/17904347/pexels-photo-17904347/free-photo-of-women-and-cat.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -25,60 +31,8 @@
       "profileId": "5"
     }
   ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "a comment about post 1",
-      "postId": "1"
-    },
-    {
-      "id": "2",
-      "text": "another comment about post 1",
-      "postId": "1"
-    },
-    {
-      "id": "3",
-      "text": " comment about post 3",
-      "postId": "3"
-    },
-    {
-      "id": "4",
-      "text": " comment about post 2",
-      "postId": "2"
-    },
-    {
-      "id": "5",
-      "text": "another comment about post 3",
-      "postId": "3"
-    },
-    {
-      "id": "6",
-      "text": "another comment about post 1",
-      "postId": "1"
-    }
-  ],
-  "like": [
-    {
-      "id": "1",
-      "count": 23,
-      "postId": "2"
-    },
-    {
-      "id": "2",
-      "count": 23,
-      "postId": "1"
-    },
-    {
-      "id": "3",
-      "count": 31,
-      "postId": "3"
-    },
-    {
-      "id": "4",
-      "count": 231,
-      "postId": "4"
-    }
-  ],
+  
+
   "users": [
     {
       "id": "9fb8",
@@ -92,6 +46,13 @@
       "fullname": "Army",
       "username": "Army",
       "email": "army@gmail.com",
+      "password": "123"
+    },
+     {
+      "id": "75k0",
+      "fullname": "T-man",
+      "username": "tee",
+      "email": "tee@gmail.com",
       "password": "123"
     }
   ],
@@ -125,6 +86,12 @@
       "name": "zizo",
       "image": "https://images.pexels.com/photos/6124236/pexels-photo-6124236.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
       "userId": "5"
+    },
+    {
+      "id": "6",
+      "name": "Army",
+      "image": "https://images.pexels.com/photos/8377138/pexels-photo-8377138.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      "userId": "d7f0"
     }
   ],
   "friends": [

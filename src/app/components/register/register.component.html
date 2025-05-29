@@ -1,6 +1,6 @@
 <div class="h-screen w-full m-auto flex flex-col text-white text-2xl p-5 justify-center items-center">
 
-    <h2 class="text-center mb-10 text-5xl font-light text-white">Signup</h2>
+    <h2 class="text-center mb-10 text-5xl font-light text-white">Register</h2>
 
     <div class="flex p-1 flex-col justify-center w-full items-center shadow-2xl text-white">
         <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
@@ -35,7 +35,7 @@
             </label>
 
             <div class="flex justify-center items-center mt-5">
-                <button class="rounded-full border  border-stone-700 p-2 w-full m-3" type="submit"
+                <button class="rounded-full border hover:bg-blue-900 hover:border-none border-stone-700 p-2 w-full m-3" type="submit"
                     [disabled]="signupForm.invalid">Signup</button>
 
             </div>
