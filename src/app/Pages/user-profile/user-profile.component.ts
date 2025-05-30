@@ -1,16 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService, User } from '../../services/auth.service';
+import { PostService } from '../../services/post.service';
 import { UserProfleButtonsComponent } from '../../components/user-profle-buttons/user-profle-buttons.component';
-import { UserProflePostsComponent } from '../../components/user-profle-posts/user-profle-posts.component';
 import { UserpHeaderComponent } from '../../components/userp-header/userp-header.component';
 import { BottomNavComponent } from '../../components/bottom-nav/bottom-nav.component';
-import { RouterLink } from '@angular/router';
+import { PostCardComponent } from '../../components/post-card/post-card.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-user-profile',
-  imports: [UserProfleButtonsComponent, UserProflePostsComponent, UserpHeaderComponent, BottomNavComponent],
+  standalone: true,
+  imports: [
+    UserProfleButtonsComponent,
+    UserpHeaderComponent,
+    BottomNavComponent,
+    PostCardComponent,CommonModule
+  ],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css'
 })
-export class UserProfileComponent {
+export class UserProfileComponent implements OnInit {
+  currentUser: User | null = null;
+  postsForUser: any[] = [];
+
+  constructor(
+    private authService: AuthService,
+    private postService: PostService
+  ) {}
+
+ ngOnInit(): void {
+  this.currentUser = this.authService.getCurrentUser();
+  if (!this.currentUser) return;
+
+  this.postService.getPostsOfCurrentUser().subscribe(posts => {
+    this.postsForUser = posts;
+  });
+}
 
 }
