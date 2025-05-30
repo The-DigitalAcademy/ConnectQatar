@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { PostService } from '../../services/post.service';
@@ -7,19 +7,20 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-post-card',
   standalone: true,
-  imports: [CommonModule, HttpClientModule,RouterLink],
+  imports: [CommonModule, HttpClientModule, RouterLink],
   providers: [PostService],
   templateUrl: './post-card.component.html',
 })
 export class PostCardComponent implements OnInit {
   postsWithProfiles: any[] = [];
+  @Input() post: any;
 
   constructor(private postService: PostService) {}
 
   ngOnInit() {
-  this.postService.getPostsWithDetails().subscribe({
-    next: (data: any[]) => this.postsWithProfiles = data.slice().reverse(),
-    error: (err: any) => console.error('Error fetching posts:', err)
-  });
-}
+    this.postService.getPostsWithDetails().subscribe({
+      next: (data: any[]) => (this.postsWithProfiles = data.slice().reverse()),
+      error: (err: any) => console.error('Error fetching posts:', err),
+    });
+  }
 }

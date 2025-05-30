@@ -7,7 +7,7 @@
             Edit Profile</h2>
         <div class="mt-15 flex flex-col hover:cursor-pointer">
           <div class="justify-self-center ">
-            <img [src]="url" class="w-15 h-15 border rounded-full flex justify-self-center " *ngIf="url"/>
+            <img [src]="url" class="w-15 h-15 border rounded-full flex justify-self-center " alt=".." *ngIf="url"/>
           </div>
           <input type="file" (change)="onSelectFile($event)" class="mt-5 border" />
         </div>
