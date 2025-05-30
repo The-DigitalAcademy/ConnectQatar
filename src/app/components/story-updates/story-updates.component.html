@@ -21,12 +21,12 @@
 </div>
 
 <!-- Overlay -->
-<div *ngIf="showOverlay" class=" text-white fixed inset-0 z-50 flex items-center justify-center p-4">
+<div *ngIf="showOverlay" class=" bg-gray-800 text-white fixed inset-0 z-50 flex items-center justify-center p-4">
     <div class=" w-full  rounded-lg shadow-lg p-6">
       <div class="text-center mb-6">
         <h2 class="text-2xl font-bold">{{ overlayContent }}</h2>
       </div>
-      <form (ngSubmit)="onSubmit()" #overlayForm="ngForm" class="space-y-4 bg-amber-600">
+      <form (ngSubmit)="onSubmit()" #overlayForm="ngForm" class="space-y-4 ">
         <div *ngIf="!isStory" class="form-group">
           <label for="caption" class="block font-medium mb-1">Caption</label>
           <textarea id="caption" name="caption" [(ngModel)]="formData.caption" required class="w-full border rounded  p-2"></textarea>
@@ -38,11 +38,11 @@
         <div *ngIf="selectedImageUrl" class="image-preview">
           <img [src]="selectedImageUrl" alt="Selected Image" class="w-full max-h-64 object-cover rounded" />
         </div>
-        <div class="flex justify-between mt-4">
-          <button type="submit" [disabled]="!overlayForm.valid" class="bg-white text-white border border-white px-4 py-2 rounded hover:bg-gray-100 disabled:opacity-50">
+        <div class="flex justify-center gap-2 flex-1 rounded-full mt-4">
+          <button type="submit" [disabled]="!overlayForm.valid" class=" text-white border border-white w-full px-4 py-2 rounded-full hover:animate-pulse disabled:opacity-50">
             Submit
           </button>
-          <button type="button" (click)="closeOverlay()" class="bg-white text-white border border-white px-4 py-2 rounded hover:bg-gray-100">
+          <button type="button" (click)="closeOverlay()" class=" text-white border border-white px-4 w-full py-2 rounded-full hover:animate-pulse">
             Cancel
           </button>
         </div>

@@ -1,19 +1,19 @@
 <div class="justify-self-center text-white" *ngIf="user">
-  <div class="flex fixed top-0 right-0 left-0 p-2 border-b gap-40 bg-white/30 backdrop-blur-md">
+  <div class="flex fixed top-0 right-0 left-0 p-2 gap-40 bg-gray-800 backdrop-blur-md">
     <h2 class="text-center text-xl ml-10">{{user.fullname}}</h2>
-  <button class="p-2 flex text-sm gap-1 items-center mr-10 " (click)="onLogOut()"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+  <button class="p-2 flex text-md gap-1 items-center mr-10 hover:text-cyan-700 hover:animate-ping" (click)="onLogOut()"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
   <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
 </svg>Logout</button>
   </div>
   
-  <div class="mt-10 flex gap-10">
+  <div class="mt-20 flex gap-10">
     <div class="">
-      <img [src]="url" alt=".." class="w-15 h-15 border rounded-full "/>
+      <img [src]="url" alt=".." class="w-15 h-15 rounded-full "/>
     </div>
     
 
-    <div class="flex gap-10">
+    <div class="flex gap-10 text-center hover:animate-pulse">
       
       <div>
         <p>0</p>
