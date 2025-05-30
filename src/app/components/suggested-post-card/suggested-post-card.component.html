@@ -1,7 +1,18 @@
 <div *ngFor="let user of usersWithPosts; trackBy: trackByUserId" class="shadow p-0 bottom-20 h-auto">
-  <div class="flex items-center rounded-full mt-5 ml-2">
+  <div class="flex items-center rounded-full mt-5 ml-2" > 
     <img class="rounded-full h-8 w-8" alt=".." [src]="user.image" [alt]="user.name + ' profile'" />
-    <h1 class="text-white text-m m-2 font-thin">{{ user.name }}</h1>
+    <h1 class="text-white flex-1 m-2 font-thin">{{ user.name }}</h1>
+    <div class="bg-blue-700 hover:bg-blue-750 flex text-white border rounded-full w-29 border-white-700 pr-5">
+     <button
+  (click)="toggleFollow(user)"
+  [ngClass]="isFollowed(user) ? 'bg-gray-700 hover:bg-gray-800' : 'bg-blue-700 hover:bg-blue-800'"
+  class="text-white font-medium text-sm py-1 px-4 rounded-full transition duration-200 ease-in-out"
+>
+  {{ isFollowed(user) ? 'Unfollow' : 'Follow' }}
+</button>
+
+    </div>
+  
   </div>
 
   <ng-container *ngIf="user.posts && user.posts.length > 0">
@@ -14,5 +25,11 @@
       <p class="text-white">{{ user.posts[0].title }}</p>
     </div>
 
+    
   </ng-container>
+
+  
+  
 </div>
+
+

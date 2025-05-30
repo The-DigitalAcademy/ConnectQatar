@@ -1,48 +1,156 @@
-<div class="h-screen w-full m-auto flex flex-col text-white text-2xl p-5 justify-center items-center">
+<div class="h-screen w-full m-auto flex flex-col text-white text-2xl justify-center items-center pt-5">
 
-    <h2 class="text-center mb-10 text-5xl font-light text-white">Signup</h2>
+  <div class="items-center justify-center flex flex-col" >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="100"
+      height="100"
+      fill="currentColor"
+      class="bi bi-chat-right-heart-fill text-white"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353zM8 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"
+      />
+    </svg>
+    <h2 class="text-center text-1xl font-light text-white">
+      New Here?
+    </h2>
+    <p class="text-center text-1xl">Sign Up and Connect with the Qatar Community</p>
+  </div>
 
-    <div class="flex p-1 flex-col justify-center w-full items-center shadow-2xl text-white">
-        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-            <label>Full Name:
-                <div class="border border-stone-700 p-2 w-full">
-                    <input formControlName="fullname" />
-                </div>
-            </label>
+  <div class="flex p-5 flex-col justify-center w-full items-center text-white">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="w-full">
+      <div class="mb-4">
+        <label class="text-sm text-white">Name</label>
+        <div class="relative">
+          <svg
+            class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5.121 17.804A11.953 11.953 0 0112 15c2.28 0 4.383.637 6.121 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+          </svg>
+          <input
+            formControlName="fullname"
+            class="pl-10 p-2 border border-white w-full rounded-full text-sm"
+          />
+        </div>
+      </div>
 
-            <label>Username:
-                <div class="border border-stone-700 p-2 w-full">
-                    <input formControlName="username" />
-                </div>
-            </label>
+      <div class="mb-4">
+        <label class="text-sm">Create Username</label>
+        <div class="relative">
+          <svg
+            class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+          <input
+            formControlName="username"
+            class="pl-10 p-2 border border-white w-full rounded-full text-sm"
+          />
+        </div>
+      </div>
 
-            <label>Email:
-                <div class="border border-stone-700 p-2 w-full">
-                    <input formControlName="email" />
-                </div>
-            </label>
+      <div class="mb-4">
+        <label class="text-sm">Email</label>
+        <div class="relative">
+          <svg
+            class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M16 4H8a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V8a4 4 0 00-4-4z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M22 6l-10 7L2 6"
+            />
+          </svg>
+          <input
+            formControlName="email"
+            class="pl-10 p-2 border border-white w-full rounded-full text-sm"
+          />
+        </div>
+      </div>
 
-            <label>Password:
-                <div class="border border-stone-700 p-2 w-full">
-                    <input type="password" formControlName="password" />
-                </div>
-            </label>
+      <div class="mb-4">
+        <label class="text-sm">Password</label>
+        <div class="relative">
+          <svg
+            class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5s-3 1.343-3 3 1.343 3 3 3zM5 20h14a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2z"
+            />
+          </svg>
+          <input
+            type="password"
+            formControlName="password"
+            class="pl-10 p-2 border border-white w-full rounded-full text-sm"
+          />
+        </div>
+      </div>
 
-            <label>Confirm Password:
-                <div class="border border-stone-700 p-2 w-full">
-                    <input type="password" formControlName="confirmPassword" />
-                </div>
-            </label>
+      <div class="mb-4">
+        <label class="text-sm">Confirm Password</label>
+        <div class="relative">
+          <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5s-3 1.343-3 3 1.343 3 3 3zM5 20h14a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2z"
+            />
+          </svg>
+          <input
+            type="password"
+            formControlName="confirmPassword"
+            class="pl-10 p-2 border border-white w-full rounded-full text-sm"
+          />
+        </div>
+      </div>
 
-            <div class="flex justify-center items-center mt-5">
-                <button class="rounded-full border  border-stone-700 p-2 w-full m-3" type="submit"
-                    [disabled]="signupForm.invalid">Signup</button>
+      <div class="flex justify-center items-center mt-5">
+        <button
+          class="rounded-full border p-2 w-full m-3 bg-white text-[#21313e] font-bold"
+          type="submit"
+          [disabled]="signupForm.invalid"
+        >
+          Sign Up
+        </button>
+      </div>
+    </form>
 
-            </div>
-        </form>
-
-        <div *ngIf="message">{{ message }}</div>
-
+    <div class="h-6 mt-2 text-center text-sm text-white">
+        <span *ngIf="message">{{ message }}</span>
     </div>
 
 </div>

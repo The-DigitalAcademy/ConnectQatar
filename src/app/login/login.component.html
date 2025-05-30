@@ -1,26 +1,83 @@
+<div class="h-screen w-full m-auto flex flex-col text-white text-2xl justify-center items-center">
+  <div class="items-center justify-center flex flex-col">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="100"
+      height="100"
+      fill="currentColor"
+      class="bi bi-chat-right-heart-fill text-white"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353zM8 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"
+      />
+    </svg>
+    <h2 class="text-center text-1xl font-light text-white">Welcome Back!</h2>
+    <p class="text-center text-1xl">Sign In to connect with the Qatar Community</p>
+  </div>
 
-
-<div class="h-screen w-auto m-auto flex flex-col text-white text-2xl p-5 justify-center items-center">
-    <div class="flex justify-center mb-10 shadow p-5 font-thin text-center text-5xl text-white">
-        <h2>Login</h2>
-    </div>
-    <div class=" w-full p-5 shadow-2xl">
-    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="bg-amber-50">
-        <label>Username:
-            <div class="m-3">
-                <input class="border border-stone-700 p-2 rounded w-full" placeholder="username" formControlName="username" />
-            </div>
-        </label>
-        <label>Password:
-            <div class="m-3">
-                <input class="border border-stone-700 rounded p-2 w-full" placeholder="password" type="password" formControlName="password" />
-
-            </div>
-        </label>
-        <div>
-            <button class="rounded-full border  border-stone-700 p-2 w-full m-3" type="submit" [disabled]="loginForm.invalid">Login</button>
+  <div class="flex p-5 flex-col justify-center w-full items-center text-white">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="w-full">
+      <div class="mb-4">
+        <label class="text-sm text-white">Username</label>
+        <div class="relative">
+          <svg
+            class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+          <input
+            formControlName="username"
+            class="pl-10 p-2 border border-white w-full rounded-full text-sm"
+          />
         </div>
+      </div>
+
+      <div class="mb-4">
+        <label class="text-sm text-white">Password</label>
+        <div class="relative">
+          <svg
+            class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5s-3 1.343-3 3 1.343 3 3 3zM5 20h14a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2z"
+            />
+          </svg>
+          <input
+            type="password"
+            formControlName="password"
+            class="pl-10 p-2 border border-white w-full rounded-full text-sm"
+          />
+        </div>
+      </div>
+
+      <div class="flex justify-center items-center mt-5">
+        <button
+          class="rounded-full border p-2 w-full m-3 bg-white text-[#21313e] font-bold"
+          type="submit"
+          [disabled]="loginForm.invalid"
+        >
+          Sign In
+        </button>
+      </div>
     </form>
-</div>
-    <div *ngIf="message">{{ message }}</div>
+
+    <div class="h-6 mt-2 text-center text-sm text-white">
+      <span *ngIf="message"><b>{{ message }}</b></span>
+    </div>
+  </div>
 </div>

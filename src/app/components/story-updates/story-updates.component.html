@@ -1,5 +1,5 @@
 <!-- Story Updates List -->
-<div class="p-1 m-1 flex justify-center items-center flex-row">
+<div class="p-3 flex justify-center items-center bg-gray-800  flex-row">
   <div class="h-auto w-20 rounded-full">
     <img class="rounded-full h-15 w-15"
       src="https://images.pexels.com/photos/11238858/pexels-photo-11238858.png?auto=compress&cs=tinysrgb&w=1200&lazy=load"
@@ -11,7 +11,6 @@
 
   <div class="userStories flex w-full gap-1 overflow-x-auto">
     <div *ngFor="let story of stories" class="h-auto flex-none w-20 rounded-full ml-3 hover:animate-pulse">
-      <!-- Pass the story id as a route parameter -->
       <a [routerLink]="['/viewStory', story.id]">
         <img class="rounded-full h-15 w-15"
           [src]="story.image"
@@ -22,15 +21,15 @@
 </div>
 
 <!-- Overlay -->
-<div *ngIf="showOverlay" class="bg-white text-white fixed inset-0 z-50 flex items-center justify-center p-4">
-    <div class="bg-white w-full max-w-xl rounded-lg shadow-lg p-6">
+<div *ngIf="showOverlay" class=" text-white fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class=" w-full  rounded-lg shadow-lg p-6">
       <div class="text-center mb-6">
         <h2 class="text-2xl font-bold">{{ overlayContent }}</h2>
       </div>
-      <form (ngSubmit)="onSubmit()" #overlayForm="ngForm" class="space-y-4">
+      <form (ngSubmit)="onSubmit()" #overlayForm="ngForm" class="space-y-4 bg-amber-600">
         <div *ngIf="!isStory" class="form-group">
           <label for="caption" class="block font-medium mb-1">Caption</label>
-          <textarea id="caption" name="caption" [(ngModel)]="formData.caption" required class="w-full border rounded p-2"></textarea>
+          <textarea id="caption" name="caption" [(ngModel)]="formData.caption" required class="w-full border rounded  p-2"></textarea>
         </div>
         <div class="form-group">
           <label for="image" class="block font-medium mb-1">Upload Image</label>
