@@ -94,6 +94,13 @@
       "email": "bongekamdluli4@gmail.com",
       "password": "123"
     },
+     {
+      "id": "9fx8",
+      "fullname": "lindo",
+      "username": "lee",
+      "email": "bongekamdluli4@gmail.com",
+      "password": "123"
+    },
     {
       "id": "d7f0",
       "fullname": "Army",
@@ -103,7 +110,7 @@
     },
     {
       "id": "75k0",
-      "fullname": "T-man",
+      "fullname": "zizo",
       "username": "tee",
       "email": "tee@gmail.com",
       "password": "123"
@@ -134,9 +141,9 @@
   "profile": [
     {
       "id": "1",
-      "name": "Luuh",
+      "name": "Bongeka",
       "image": "https://images.pexels.com/photos/3500014/pexels-photo-3500014.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "userId": "1"
+      "userId": "9fb8"
     },
     {
       "id": "2",
@@ -160,7 +167,7 @@
       "id": "5",
       "name": "zizo",
       "image": "https://images.pexels.com/photos/6124236/pexels-photo-6124236.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "userId": "5"
+      "userId": "75k0"
     },
     {
       "id": "6",

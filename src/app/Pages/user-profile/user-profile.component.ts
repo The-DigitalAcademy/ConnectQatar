@@ -28,13 +28,11 @@ export class UserProfileComponent implements OnInit {
     private postService: PostService
   ) {}
 
- ngOnInit(): void {
-  this.currentUser = this.authService.getCurrentUser();
-  if (!this.currentUser) return;
-
+ngOnInit() {
   this.postService.getPostsOfCurrentUser().subscribe(posts => {
     this.postsForUser = posts;
   });
 }
+
 
 }
