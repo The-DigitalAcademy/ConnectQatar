@@ -1,0 +1,449 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "beauty and the beast",
+      "image": "https://images.pexels.com/photos/16952437/pexels-photo-16952437/free-photo-of-profile-of-a-smiling-woman-with-curly-hair.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "profileId": "1"
+    },
+    {
+      "id": "5",
+      "title": "chill bro!",
+      "image": "https://images.pexels.com/photos/16095163/pexels-photo-16095163/free-photo-of-design-uroboros-snake-ring-on-finger.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      "profileId": "6"
+    },
+    {
+      "id": "2",
+      "title": "a litle bit of this and that",
+      "image": "https://images.pexels.com/photos/17904347/pexels-photo-17904347/free-photo-of-women-and-cat.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "profileId": "1"
+    },
+    {
+      "id": "3",
+      "title": "a title",
+      "image": "https://images.pexels.com/photos/3016714/pexels-photo-3016714.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "3"
+    },
+    {
+      "id": "4",
+      "title": "Shaper !!",
+      "image": "https://images.pexels.com/photos/30918865/pexels-photo-30918865/free-photo-of-vintage-film-photography-in-ho-chi-minh-city.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "5"
+    },
+    {
+      "id": "6",
+      "title": "sunshine on my mind",
+      "image": "https://images.pexels.com/photos/14080040/pexels-photo-14080040.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "2"
+    },
+    {
+      "id": "7",
+      "title": "candid chaos",
+      "image": "https://images.pexels.com/photos/14578106/pexels-photo-14578106.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "3"
+    },
+    {
+      "id": "8",
+      "title": "lost in thought",
+      "image": "https://images.pexels.com/photos/14411214/pexels-photo-14411214.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "6"
+    },
+    {
+      "id": "9",
+      "title": "when the city sleeps",
+      "image": "https://images.pexels.com/photos/11083567/pexels-photo-11083567.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "4"
+    },
+    {
+      "id": "10",
+      "title": "a gentle storm",
+      "image": "https://images.pexels.com/photos/13669198/pexels-photo-13669198.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "5"
+    },
+    {
+      "id": "6",
+      "title": "late night musings",
+      "image": "https://images.pexels.com/photos/5992676/pexels-photo-5992676.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "2"
+    },
+    {
+      "id": "7",
+      "title": "city lights",
+      "image": "https://images.pexels.com/photos/18285172/pexels-photo-18285172/free-photo-of-street-at-night-in-the-city.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "4"
+    },
+    {
+      "id": "8",
+      "title": "cozy corner",
+      "image": "https://images.pexels.com/photos/2395254/pexels-photo-2395254.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "5"
+    },
+    {
+      "id": "9",
+      "title": "lost in thoughts",
+      "image": "https://images.pexels.com/photos/14538296/pexels-photo-14538296.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "3"
+    }
+  ],
+
+  "users": [
+    {
+      "id": "9fb8",
+      "fullname": "Bongeka",
+      "username": "Bo",
+      "email": "bongekamdluli4@gmail.com",
+      "password": "123"
+    },
+     {
+      "id": "9fx8",
+      "fullname": "lindo",
+      "username": "lee",
+      "email": "bongekamdluli4@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "d7f0",
+      "fullname": "Army",
+      "username": "Army",
+      "email": "army@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "75k0",
+      "fullname": "zizo",
+      "username": "tee",
+      "email": "tee@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "3d68",
+      "fullname": "abbie",
+      "username": "abbie",
+      "email": "abbie@email.com",
+      "password": "123"
+    },
+    {
+      "id": "c3f2",
+      "fullname": "Lesedi",
+      "username": "les",
+      "email": "lesedi@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "e0a9",
+      "fullname": "Jay",
+      "username": "jayjay",
+      "email": "jay@gmail.com",
+      "password": "123"
+    }
+  ],
+
+  "profile": [
+    {
+      "id": "1",
+      "name": "Bongeka",
+      "image": "https://images.pexels.com/photos/3500014/pexels-photo-3500014.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "userId": "9fb8"
+    },
+    {
+      "id": "2",
+      "name": "neo",
+      "image": "https://images.pexels.com/photos/3250603/pexels-photo-3250603.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "userId": "2"
+    },
+    {
+      "id": "3",
+      "name": "tau",
+      "image": "https://images.pexels.com/photos/2616953/pexels-photo-2616953.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "userId": "3"
+    },
+    {
+      "id": "4",
+      "name": "leo",
+      "image": "https://images.pexels.com/photos/4668934/pexels-photo-4668934.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "userId": "4"
+    },
+    {
+      "id": "5",
+      "name": "zizo",
+      "image": "https://images.pexels.com/photos/6124236/pexels-photo-6124236.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "userId": "75k0"
+    },
+    {
+      "id": "6",
+      "name": "Army",
+      "image": "https://images.pexels.com/photos/8377138/pexels-photo-8377138.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      "userId": "d7f0"
+    },
+    {
+      "id": "7",
+      "name": "les",
+      "image": "https://images.pexels.com/photos/17931657/pexels-photo-17931657/free-photo-of-happy-black-woman-in-headphones.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "userId": "c3f2"
+    },
+    {
+      "id": "8",
+      "name": "jay",
+      "image": "https://images.pexels.com/photos/1121796/pexels-photo-1121796.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "userId": "e0a9"
+    }
+  ],
+
+  "friends": [
+    {
+      "id": "1",
+      "count": 23,
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "count": 3,
+      "profileId": "4"
+    },
+    {
+      "id": "3",
+      "count": 0,
+      "profileId": "3"
+    },
+    {
+      "id": "4",
+      "count": 12,
+      "profileId": "2"
+    },
+    {
+      "id": "5",
+      "count": 6,
+      "profileId": "6"
+    },
+    {
+      "id": "6",
+      "count": 19,
+      "profileId": "7"
+    }
+  ],
+
+  "messages": [
+    {
+      "id": 1,
+      "senderId": 1,
+      "receiverId": 2,
+      "content": "Hey!",
+      "timestamp": "2024-05-19T15:00:00Z"
+    },
+    {
+      "id": 2,
+      "senderId": 2,
+      "receiverId": 1,
+      "content": "Hi!",
+      "timestamp": "2024-05-19T15:02:00Z"
+    },
+    {
+      "id": 3,
+      "senderId": 1,
+      "receiverId": 2,
+      "content": "How are you?",
+      "timestamp": "2024-05-19T15:05:00Z"
+    },
+    {
+      "id": 4,
+      "senderId": 2,
+      "receiverId": 1,
+      "content": "I'm good, thanks! How about you?",
+      "timestamp": "2024-05-19T15:07:00Z"
+    },
+    {
+      "id": 5,
+      "senderId": 1,
+      "receiverId": 2,
+      "content": "Doing well, just busy with work.",
+      "timestamp": "2024-05-19T15:10:00Z"
+    },
+    {
+      "id": 6,
+      "senderId": 2,
+      "receiverId": 1,
+      "content": "Same here. Let's catch up soon!",
+      "timestamp": "2024-05-19T15:12:00Z"
+    },
+    {
+      "id": 7,
+      "senderId": 1,
+      "receiverId": 2,
+      "content": "Definitely! How about this weekend?",
+      "timestamp": "2024-05-19T15:15:00Z"
+    },
+    {
+      "id": 8,
+      "senderId": 2,
+      "receiverId": 1,
+      "content": "Sounds great! See you then.",
+      "timestamp": "2024-05-19T15:17:00Z"
+    },
+    {
+      "id": 9,
+      "senderId": 1,
+      "receiverId": 3,
+      "content": "Hey, long time no talk!",
+      "timestamp": "2024-05-19T16:00:00Z"
+    },
+    {
+      "id": 10,
+      "senderId": 3,
+      "receiverId": 1,
+      "content": "Yeah, it's been a while. How have you been?",
+      "timestamp": "2024-05-19T16:03:00Z"
+    },
+    {
+      "id": 11,
+      "senderId": 2,
+      "receiverId": 4,
+      "content": "Hey, you coming to the event later?",
+      "timestamp": "2024-05-19T16:10:00Z"
+    },
+    {
+      "id": 12,
+      "senderId": 4,
+      "receiverId": 2,
+      "content": "Yep! Just finishing up a few things.",
+      "timestamp": "2024-05-19T16:12:00Z"
+    },
+    {
+      "id": 13,
+      "senderId": 1,
+      "receiverId": 4,
+      "content": "Loved your recent post!",
+      "timestamp": "2024-05-19T16:15:00Z"
+    },
+    {
+      "id": 14,
+      "senderId": 4,
+      "receiverId": 1,
+      "content": "Thanks! Appreciate it 😊",
+      "timestamp": "2024-05-19T16:17:00Z"
+    },
+    {
+      "id": 15,
+      "senderId": 3,
+      "receiverId": 2,
+      "content": "Need help with the group project?",
+      "timestamp": "2024-05-19T16:30:00Z"
+    },
+    {
+      "id": 16,
+      "senderId": 2,
+      "receiverId": 3,
+      "content": "Yes please! I’ll send the files shortly.",
+      "timestamp": "2024-05-19T16:35:00Z"
+    },
+    {
+      "id": 17,
+      "senderId": 5,
+      "receiverId": 6,
+      "content": "You around later?",
+      "timestamp": "2024-05-19T17:00:00Z"
+    },
+    {
+      "id": 18,
+      "senderId": 6,
+      "receiverId": 5,
+      "content": "Yep, what’s up?",
+      "timestamp": "2024-05-19T17:01:00Z"
+    },
+    {
+      "id": 19,
+      "senderId": 4,
+      "receiverId": 7,
+      "content": "Great pic you posted!",
+      "timestamp": "2024-05-19T17:05:00Z"
+    },
+    {
+      "id": 20,
+      "senderId": 7,
+      "receiverId": 4,
+      "content": "Thank you! Appreciate the love 💛",
+      "timestamp": "2024-05-19T17:07:00Z"
+    },
+    {
+      "id": 21,
+      "senderId": 8,
+      "receiverId": 1,
+      "content": "Can I ask you something real quick?",
+      "timestamp": "2024-05-19T17:10:00Z"
+    },
+    {
+      "id": 22,
+      "senderId": 1,
+      "receiverId": 8,
+      "content": "Of course, go ahead.",
+      "timestamp": "2024-05-19T17:12:00Z"
+    }
+  ],
+
+  "storyUpdate": [
+    {
+      "id": "1",
+      "image": "https://images.pexels.com/photos/3219442/pexels-photo-3219442.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "3"
+    },
+    {
+      "id": "2",
+      "image": "https://images.pexels.com/photos/12881264/pexels-photo-12881264.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "2"
+    },
+    {
+      "id": "3",
+      "image": "https://images.pexels.com/photos/2306109/pexels-photo-2306109.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "3"
+    },
+    {
+      "id": "4",
+      "image": "https://images.pexels.com/photos/1628240/pexels-photo-1628240.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "1"
+    },
+    {
+      "id": "5",
+      "image": "https://images.pexels.com/photos/18514829/pexels-photo-18514829/free-photo-of-a-woman-standing-on-the-beach.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "6"
+    },
+    {
+      "id": "6",
+      "image": "https://images.pexels.com/photos/13742938/pexels-photo-13742938.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "5"
+    },
+    {
+      "id": "7",
+      "image": "https://images.pexels.com/photos/1121792/pexels-photo-1121792.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "7"
+    },
+    {
+      "id": "8",
+      "image": "https://images.pexels.com/photos/2078265/pexels-photo-2078265.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "8"
+    },
+    {
+      "id": "5",
+      "image": "https://images.pexels.com/photos/17044884/pexels-photo-17044884/free-photo-of-portrait-of-woman-in-yellow-light.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "4"
+    },
+    {
+      "id": "6",
+      "image": "https://images.pexels.com/photos/17512059/pexels-photo-17512059/free-photo-of-woman-smiling-in-nature.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "1"
+    },
+    {
+      "id": "7",
+      "image": "https://images.pexels.com/photos/16149497/pexels-photo-16149497/free-photo-of-woman-wearing-sunglasses.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "5"
+    },
+    {
+      "id": "8",
+      "image": "https://images.pexels.com/photos/18284724/pexels-photo-18284724/free-photo-of-silhouette-of-a-man-at-sunset.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "2"
+    },
+    {
+      "id": "9",
+      "image": "https://images.pexels.com/photos/17867671/pexels-photo-17867671/free-photo-of-african-woman-in-a-colorful-outfit.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+      "profileId": "3"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+<div class="flex-col m-auto h-screen ">
+  <div class="flex justify-start items-center gap-2 text-xl text-white m-3">
+    <a routerLink="/posts">
+      <i class="bi bi-arrow-left-circle font-bold ml-3"></i>
+    </a>
+    <p class="text-center font-thin flex-1">Story Update</p>
+  </div>
+
+  <!-- Story Display -->
+  <div class="story flex justify-center items-center" *ngIf="story && sanitizedImageUrl">
+    <img
+      [src]="sanitizedImageUrl"
+      alt="story image"
+      class="rounded-lg max-h-[80vh] max-w-full"
+    />
+  </div>
+</div>
