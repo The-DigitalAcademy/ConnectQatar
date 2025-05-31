@@ -408,72 +408,32 @@
     }
   ],
   "storyUpdate": [
-    {
-      "id": "1",
-      "image": "https://images.pexels.com/photos/3219442/pexels-photo-3219442.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "profileId": "3"
-    },
-    {
-      "id": "2",
-      "image": "https://images.pexels.com/photos/12881264/pexels-photo-12881264.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "profileId": "2"
-    },
-    {
-      "id": "3",
-      "image": "https://images.pexels.com/photos/2306109/pexels-photo-2306109.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "profileId": "3"
-    },
-    {
-      "id": "4",
-      "image": "https://images.pexels.com/photos/1628240/pexels-photo-1628240.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "profileId": "1"
-    },
-    {
-      "id": "5",
-      "image": "https://images.pexels.com/photos/18514829/pexels-photo-18514829/free-photo-of-a-woman-standing-on-the-beach.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "profileId": "6"
-    },
-    {
-      "id": "6",
-      "image": "https://images.pexels.com/photos/13742938/pexels-photo-13742938.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "profileId": "5"
-    },
-    {
-      "id": "7",
-      "image": "https://images.pexels.com/photos/1121792/pexels-photo-1121792.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "profileId": "7"
-    },
-    {
-      "id": "8",
-      "image": "https://images.pexels.com/photos/2078265/pexels-photo-2078265.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "profileId": "8"
-    },
-    {
-      "id": "5",
-      "image": "https://images.pexels.com/photos/17044884/pexels-photo-17044884/free-photo-of-portrait-of-woman-in-yellow-light.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "profileId": "4"
-    },
-    {
-      "id": "6",
-      "image": "https://images.pexels.com/photos/17512059/pexels-photo-17512059/free-photo-of-woman-smiling-in-nature.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "profileId": "1"
-    },
-    {
-      "id": "7",
-      "image": "https://images.pexels.com/photos/16149497/pexels-photo-16149497/free-photo-of-woman-wearing-sunglasses.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "profileId": "5"
-    },
-    {
-      "id": "8",
-      "image": "https://images.pexels.com/photos/18284724/pexels-photo-18284724/free-photo-of-silhouette-of-a-man-at-sunset.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "profileId": "2"
-    },
-    {
-      "id": "9",
-      "image": "https://images.pexels.com/photos/17867671/pexels-photo-17867671/free-photo-of-african-woman-in-a-colorful-outfit.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "profileId": "3"
-    }
-  ],
+  {
+    "id": 1,
+    "image": "https://images.pexels.com/photos/3219442/pexels-photo-3219442.jpeg",
+    "userId": "3d68"
+  },
+  {
+    "id": 2,
+    "image": "https://images.pexels.com/photos/12881264/pexels-photo-12881264.jpeg",
+    "userId": "75k0"
+  },
+  {
+    "id": 3,
+    "image": "https://images.pexels.com/photos/2306109/pexels-photo-2306109.jpeg",
+    "userId": "d7f0"
+  },
+  {
+    "id": 4,
+    "image": "https://images.pexels.com/photos/1628240/pexels-photo-1628240.jpeg",
+    "userId": "9fb8"
+  },
+  {
+    "id": 5,
+    "image": "https://images.pexels.com/photos/18514829/pexels-photo-18514829.jpeg",
+    "userId": "e0a9"
+  }
+],
   "profileImage": [
     {
       "id": "2de1",
@@ -515,5 +475,4 @@
     "following": ["9fb8", "75k0", "c3f2"]
   }
 ]
-
 }

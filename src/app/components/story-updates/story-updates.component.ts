@@ -6,6 +6,8 @@ import { RouterLink } from '@angular/router';
 import { UploadDataService } from '../../services/upload-data.service';
 import { StoryRequestInterface } from '../../models/post';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { PostService } from '../../services/post.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-story-updates',
@@ -15,8 +17,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class StoryUpdatesComponent implements OnInit {
 
+  stories: any[] = [];
+  url: string = '';
+
   uploadDataService = inject(UploadDataService)
   snackBar = inject(MatSnackBar)
+  PostService = inject(PostService)
+  http = inject(HttpClient)
 
   formData = {
     caption: '',
@@ -28,36 +35,20 @@ export class StoryUpdatesComponent implements OnInit {
   overlayContent: string = ''
   selectedImageUrl: string | ArrayBuffer | null = null
 
-  stories: any[] = [];
-  selectedProfileId: string = '3'; // Set this dynamically as needed
+  ngOnInit(): void {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser') ?? '{}');
 
+    // 1. Fetch profile image for current user
+    this.http.get<any[]>('http://localhost:3000/profileImage').subscribe(images => {
+      const profile = images.find(p => p.userId === currentUser.id);
+      this.url = profile?.image || '';
+    });
 
- url: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr3jhpAFYpzxx39DRuXIYxNPXc0zI5F6IiMQ&s'; 
-  user: any = null;
-
-  ngOnInit() {
-    this.loadStoriesForProfile(this.selectedProfileId);
-    const userStr = localStorage.getItem('currentUser');
-    if (userStr) {
-      const user = JSON.parse(userStr);
-      this.user = user;
-      const userId = user.id || user.userId;
-      const storedImage = localStorage.getItem(`profileImage_${userId}`);
-      if (storedImage) {
-        this.url = storedImage;
-      }
-    }
-  }
-
-  loadStoriesForProfile(profileId: string) {
-    this.uploadDataService.getStoriesByProfileId(profileId).subscribe(
-      (data) => {
-        this.stories = data;
-      },
-      (error) => {
-        console.error('Error fetching stories:', error);
-      }
-    );
+    // 2. Fetch stories from followed users
+    this.PostService.getStoriesFromFollowedUsers(currentUser.id).subscribe(data => {
+      console.log('Following Stories:', data);
+      this.stories = data;
+    });
   }
 
   createStory(){

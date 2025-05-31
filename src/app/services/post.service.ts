@@ -83,5 +83,33 @@ export class PostService {
       return suggestedUsers;
     })
   );
-}
+  }
+
+  getStoriesFromFollowedUsers(currentUserId: string): Observable<any[]> {
+  return forkJoin([
+    this.http.get<any[]>('http://localhost:3000/following'),
+    this.http.get<any[]>('http://localhost:3000/storyUpdate'),
+    this.http.get<any[]>('http://localhost:3000/users'),
+    this.http.get<any[]>('http://localhost:3000/profile')
+  ]).pipe(
+    map(([followingData, stories, users, profiles]) => {
+      const followingEntry = followingData.find(f => f.userId === currentUserId);
+      const followingIds = followingEntry?.following || [];
+
+      return stories
+        .filter(story => followingIds.includes(story.userId))
+        .map(story => {
+          const user = users.find(u => u.id === story.userId);
+          const profile = profiles.find(p => p.userId === story.userId);
+          return {
+            ...story,
+            user,
+            profile
+          };
+        });
+      })
+    );
+  }
+
+
 }
