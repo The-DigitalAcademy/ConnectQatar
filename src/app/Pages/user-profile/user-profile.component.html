@@ -2,11 +2,7 @@
 <app-userp-header/>
 <app-user-profle-buttons/>
 
- <ng-container *ngIf="postsForUser.length; ">
-  <ng-container *ngFor="let post of postsForUser">
-    <app-post-card class="grid grid-cols-2  gap-2.5 m-1 h-[15rem]" [post]="post"></app-post-card>
-  </ng-container>
-</ng-container>
+<app-user-posts></app-user-posts>
 
 <app-bottom-nav />
 </div>
