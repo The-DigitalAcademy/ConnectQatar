@@ -1,7 +1,12 @@
 <app-post-type />
 
-<div class="suggestedPosts flex-1 mb-10 p-2 bottom-20">
-<app-suggested-post-card />
+<div class="suggested-posts-container">
+  <app-suggested-post-card
+    *ngFor="let user of usersWithPosts; trackBy: trackByUserId"
+    [user]="user"
+    [isFollowed]="currentFollowing.includes(user.id)"
+    (toggleFollow)="onToggleFollow($event)">
+  </app-suggested-post-card>
 </div>
 
 <app-bottom-nav />

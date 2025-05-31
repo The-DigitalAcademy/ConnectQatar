@@ -54,4 +54,34 @@ export class PostService {
       })
     );
   }
+
+  getSuggestedPosts(currentUserId: string): Observable<any[]> {
+  return forkJoin([
+    this.http.get<any[]>(`${this.baseUrl}/following`),
+    this.http.get<any[]>(`${this.baseUrl}/posts`),
+    this.http.get<any[]>(`${this.baseUrl}/profile`),
+    this.http.get<any[]>(`${this.baseUrl}/users`)
+  ]).pipe(
+    map(([followingData, posts, profiles, users]) => {
+      const followEntry = followingData.find(f => f.userId === currentUserId);
+      const followingIds = followEntry?.following || [];
+
+      const suggestedUsers = users
+        .filter(user => !followingIds.includes(user.id) && user.id !== currentUserId)
+        .map(user => {
+          const profile = profiles.find(p => p.userId === user.id);
+          const userPosts = posts.filter(post => post.userId === user.id);
+          return {
+            id: user.id,
+            name: user.fullname,
+            profile,
+            image: profile?.avatar,
+            posts: userPosts
+          };
+        });
+
+      return suggestedUsers;
+    })
+  );
+}
 }
