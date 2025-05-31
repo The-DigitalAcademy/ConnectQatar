@@ -68,7 +68,7 @@ export class StoryUpdatesComponent implements OnInit {
       let user = JSON.parse(localStorage.getItem('currentUser') ?? '{}');
 
       const newStory: StoryRequestInterface = {
-        id: user.id, 
+        userId: user.id, 
         image: this.selectedImageUrl as string
       }
   

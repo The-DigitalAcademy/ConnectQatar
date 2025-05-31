@@ -31,7 +31,7 @@ export class UserPostsComponent implements OnInit {
 
 loadUserPosts() {
   this.http.get<any[]>(`${this.baseUrl}/posts`).subscribe(posts => {
-    this.userPosts = posts.filter(post => post.id === this.userId);
+    this.userPosts = posts.filter(post => post.userId === this.userId);
   });
 }
 }
