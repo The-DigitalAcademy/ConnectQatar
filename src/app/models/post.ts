@@ -1,10 +1,10 @@
 export interface PostRequestInterface {
     userId: string;
-    imageUrl: string;
-    caption: string;
+    image: string;
+    title: string;
 }
 
 export interface StoryRequestInterface {
     userId: string;
-    imageUrl: string
+    image: string;
 }

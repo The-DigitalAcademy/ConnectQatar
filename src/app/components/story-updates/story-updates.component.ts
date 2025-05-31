@@ -69,7 +69,7 @@ export class StoryUpdatesComponent implements OnInit {
 
       const newStory: StoryRequestInterface = {
         userId: user.id, 
-        imageUrl: this.selectedImageUrl as string
+        image: this.selectedImageUrl as string
       }
   
       if (this.isStory){
