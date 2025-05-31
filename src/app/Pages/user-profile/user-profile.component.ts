@@ -5,6 +5,7 @@ import { UserpHeaderComponent } from '../../components/userp-header/userp-header
 import { BottomNavComponent } from '../../components/bottom-nav/bottom-nav.component';
 import { CommonModule } from '@angular/common';
 import { UserPostsComponent } from '../../components/user-posts/user-posts.component';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -25,6 +26,6 @@ export class UserProfileComponent{
 
   constructor(
     private authService: AuthService,
-
+    private postService: PostService
   ) {}
 }
