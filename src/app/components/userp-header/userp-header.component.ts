@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+import { UserProfileDataComponent } from "../user-profile-data/user-profile-data.component";
 
 @Component({
   selector: 'app-userp-header',
-  imports: [CommonModule],
+  imports: [CommonModule, UserProfileDataComponent],
   templateUrl: './userp-header.component.html',
   styleUrl: './userp-header.component.css'
 })

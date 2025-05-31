@@ -162,55 +162,64 @@
     }
   ],
   "profile": [
-    {
-      "id": "1",
-      "name": "Bongeka",
-      "image": "https://images.pexels.com/photos/3500014/pexels-photo-3500014.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "userId": "9fb8"
-    },
-    {
-      "id": "2",
-      "name": "neo",
-      "image": "https://images.pexels.com/photos/3250603/pexels-photo-3250603.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "userId": "2"
-    },
-    {
-      "id": "3",
-      "name": "tau",
-      "image": "https://images.pexels.com/photos/2616953/pexels-photo-2616953.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "userId": "3"
-    },
-    {
-      "id": "4",
-      "name": "leo",
-      "image": "https://images.pexels.com/photos/4668934/pexels-photo-4668934.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "userId": "4"
-    },
-    {
-      "id": "5",
-      "name": "zizo",
-      "image": "https://images.pexels.com/photos/6124236/pexels-photo-6124236.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "userId": "75k0"
-    },
-    {
-      "id": "6",
-      "name": "Army",
-      "image": "https://images.pexels.com/photos/8377138/pexels-photo-8377138.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-      "userId": "d7f0"
-    },
-    {
-      "id": "7",
-      "name": "les",
-      "image": "https://images.pexels.com/photos/17931657/pexels-photo-17931657/free-photo-of-happy-black-woman-in-headphones.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "userId": "c3f2"
-    },
-    {
-      "id": "8",
-      "name": "jay",
-      "image": "https://images.pexels.com/photos/1121796/pexels-photo-1121796.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
-      "userId": "e0a9"
-    }
-  ],
+  {
+    "id": "1",
+    "avatar": "https://images.pexels.com/photos/3500014/pexels-photo-3500014.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+    "userId": "9fb8",
+    "followCount": 124,
+    "followingCount": 210
+  },
+  {
+    "id": "2",
+    "avatar": "https://images.pexels.com/photos/3250603/pexels-photo-3250603.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+    "userId": "9fx8",
+    "followCount": 87,
+    "followingCount": 164
+  },
+  {
+    "id": "3",
+    "avatar": "https://images.pexels.com/photos/2616953/pexels-photo-2616953.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+    "userId": "75k0",
+    "followCount": 45,
+    "followingCount": 120
+  },
+  {
+    "id": "4",
+    "avatar": "https://images.pexels.com/photos/4668934/pexels-photo-4668934.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+    "userId": "3d68",
+    "followCount": 36,
+    "followingCount": 50
+  },
+  {
+    "id": "5",
+    "avatar": "https://images.pexels.com/photos/6124236/pexels-photo-6124236.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+    "userId": "75k0",
+    "followCount": 99,
+    "followingCount": 147
+  },
+  {
+    "id": "6",
+    "avatar": "https://images.pexels.com/photos/8377138/pexels-photo-8377138.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    "userId": "d7f0",
+    "followCount": 64,
+    "followingCount": 120
+  },
+  {
+    "id": "7",
+    "avatar": "https://images.pexels.com/photos/17931657/pexels-photo-17931657/free-photo-of-happy-black-woman-in-headphones.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+    "userId": "c3f2",
+    "followCount": 89,
+    "followingCount": 142
+  },
+  {
+    "id": "8",
+    "avatar": "https://images.pexels.com/photos/1121796/pexels-photo-1121796.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+    "userId": "e0a9",
+    "followCount": 203,
+    "followingCount": 310
+  }
+]
+,
   "friends": [
     {
       "id": "1",
