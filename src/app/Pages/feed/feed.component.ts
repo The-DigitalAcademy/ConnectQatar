@@ -14,8 +14,12 @@ export class FeedComponent implements OnInit {
   constructor(private postService: PostService) {}
 
   ngOnInit(): void {
-    this.postService.getPostsWithProfiles().subscribe(data => {
-      this.postsWithProfiles = data;
-    });
-  }
+  const currentUser = JSON.parse(localStorage.getItem('currentUser') ?? '{}');
+  console.log('Current User:', currentUser);
+
+  this.postService.getPostsFromFollowedUsers(currentUser.id).subscribe(data => {
+    console.log('Following Posts:', data);
+    this.postsWithProfiles = data;
+  });
+}
 }

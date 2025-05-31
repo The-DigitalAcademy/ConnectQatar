@@ -31,4 +31,25 @@ export class PostService {
       )
     );
   }
+
+  getPostsFromFollowedUsers(currentUserId: string): Observable<any[]> {
+  return forkJoin([
+    this.http.get<any[]>(`http://localhost:3000/following?userId=${currentUserId}`),
+    this.http.get<any[]>('http://localhost:3000/posts'),
+    this.http.get<any[]>('http://localhost:3000/profile'),
+    this.http.get<any[]>('http://localhost:3000/users')
+  ]).pipe(
+    map(([followingData, posts, profiles, users]) => {
+      const followingIds = followingData[0]?.following || [];
+
+      return posts
+        .filter(post => followingIds.includes(post.userId))
+        .map(post => {
+          const profile = profiles.find(p => p.userId === post.userId);
+          const user = users.find(u => u.id === post.userId);
+          return { post, profile, user };
+        });
+    })
+  );
+}
 }
