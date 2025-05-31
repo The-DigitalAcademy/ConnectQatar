@@ -483,12 +483,37 @@
   ],
   "following": [
   {
-    "id": "9fb8",  
+    "userId": "9fb8",   
     "following": ["d7f0", "75k0", "3d68"]
   },
   {
-    "id": "d7f0",
-    "following": ["9fb8"]
+    "userId": "9fx8",   
+    "following": ["c3f2", "3d68"]
+  },
+  {
+    "userId": "d7f0",   
+    "following": ["9fb8", "e0a9"]
+  },
+  {
+    "userId": "75k0",   
+    "following": ["9fb8", "3d68"]
+  },
+  {
+    "userId": "3d68",   
+    "following": ["9fx8", "c3f2"]
+  },
+  {
+    "userId": "c3f2",   
+    "following": ["e0a9", "3d68"]
+  },
+  {
+    "userId": "e0a9",  
+    "following": ["9fb8", "9fx8"]
+  },
+  {
+    "userId": "12a8", 
+    "following": ["9fb8", "75k0", "c3f2"]
   }
 ]
+
 }

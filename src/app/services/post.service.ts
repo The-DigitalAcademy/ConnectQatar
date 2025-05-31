@@ -6,6 +6,7 @@ import { Observable, forkJoin, map } from 'rxjs';
   providedIn: 'root'
 })
 export class PostService {
+  private baseUrl = 'http://localhost:3000';
   private postsUrl = 'http://localhost:3000/posts';
   private profilesUrl = 'http://localhost:3000/profile';
   private usersUrl = 'http://localhost:3000/users';
@@ -33,23 +34,24 @@ export class PostService {
   }
 
   getPostsFromFollowedUsers(currentUserId: string): Observable<any[]> {
-  return forkJoin([
-    this.http.get<any[]>(`http://localhost:3000/following?userId=${currentUserId}`),
-    this.http.get<any[]>('http://localhost:3000/posts'),
-    this.http.get<any[]>('http://localhost:3000/profile'),
-    this.http.get<any[]>('http://localhost:3000/users')
-  ]).pipe(
-    map(([followingData, posts, profiles, users]) => {
-      const followingIds = followingData[0]?.following || [];
+    return forkJoin([
+      this.http.get<any[]>(`${this.baseUrl}/following`),
+      this.http.get<any[]>(`${this.baseUrl}/posts`),
+      this.http.get<any[]>(`${this.baseUrl}/profile`),
+      this.http.get<any[]>(`${this.baseUrl}/users`)
+    ]).pipe(
+      map(([followingData, posts, profiles, users]) => {
+        const followEntry = followingData.find(f => f.userId === currentUserId);
+        const followingIds = followEntry?.following || [];
 
-      return posts
-        .filter(post => followingIds.includes(post.userId))
-        .map(post => {
-          const profile = profiles.find(p => p.userId === post.userId);
-          const user = users.find(u => u.id === post.userId);
-          return { post, profile, user };
-        });
-    })
-  );
-}
+        return posts
+          .filter(post => followingIds.includes(post.userId))
+          .map(post => {
+            const profile = profiles.find(p => p.userId === post.userId);
+            const user = users.find(u => u.id === post.userId);
+            return { post, profile, user };
+          });
+      })
+    );
+  }
 }
