@@ -1,5 +1,5 @@
-<div *ngIf="isMobileView;">
-  <router-outlet/>
+<div *ngIf="isMobileView">
+  <router-outlet></router-outlet>
 
   <div *ngIf="showCreateOverlay" class="fixed top-0  w-screen h-screen bg-gray-800 bg-opacity-50 flex justify-center items-center z-[1000]">
     <div class="flex flex-col p-5 rounded-lg shadow-lg w-screen max-w-4xl relative">
@@ -17,9 +17,11 @@
   </div>
 </div>
 
-<div #desktopMessage>
+<!-- Show desktop message for bigger screens-->
+<div *ngIf="!isMobileView" class="flex items-center justify-center min-h-screen bg-gray-900 text-white text-center px-4">
   <app-desktop-message></app-desktop-message>
 </div>
+
 
 
 
