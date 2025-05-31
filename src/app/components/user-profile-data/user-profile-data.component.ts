@@ -15,6 +15,12 @@ url: string = '';
 
   constructor(private http: HttpClient) {}
 
+  imageUrl: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr3jhpAFYpzxx39DRuXIYxNPXc0zI5F6IiMQ&s'; 
+  user: any = null;
+
+ 
+
+
   ngOnInit(): void {
     const user = JSON.parse(localStorage.getItem('currentUser') ?? '{}');
     const userId = user.id;
@@ -34,5 +40,17 @@ url: string = '';
       .subscribe(posts => {
         this.postsCount = posts.length;
       });
+
+
+       const userStr = localStorage.getItem('currentUser');
+    if (userStr) {
+      const user = JSON.parse(userStr);
+      this.user = user;
+      const userId = user.id || user.userId;
+      const storedImage = localStorage.getItem(`profileImage_${userId}`);
+      if (storedImage) {
+        this.imageUrl = storedImage;
+      }
+    }
   }
 }
