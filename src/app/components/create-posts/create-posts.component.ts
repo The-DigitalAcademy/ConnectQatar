@@ -65,14 +65,14 @@ export class CreatePostsComponent {
     console.log('User:'+ user);
 
     const newPost: PostRequestInterface = {
-      userId: user.id,
-      caption: this.formData.caption,
-      imageUrl: this.selectedImageUrl as string
+      id: user.id,
+      title: this.formData.caption,
+      image: this.selectedImageUrl as string
     }
 
     const newStory: StoryRequestInterface = {
-      userId: user.id,
-      imageUrl: this.selectedImageUrl as string
+      id: user.id,
+      image: this.selectedImageUrl as string
     }
 
     if (this.isStory){
