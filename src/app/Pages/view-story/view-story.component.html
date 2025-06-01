@@ -7,11 +7,14 @@
   </div>
 
   <!-- Story Display -->
-  <div class="story flex justify-center items-center" *ngIf="story && sanitizedImageUrl">
-    <img
-      [src]="sanitizedImageUrl"
-      alt="story image"
-      class="rounded-lg max-h-[80vh] max-w-full"
-    />
+<div *ngIf="story" class="flex flex-col items-center justify-center min-h-screen bg-black">
+  <img [src]="story.image" class="rounded-lg max-w-[90%] max-h-[80vh]" />
+
+  <div class="flex flex-row items-center gap-3 mt-4 text-white">
+    <img *ngIf="profile?.avatar"
+         [src]="profile.avatar"
+         class="h-10 w-10 rounded-full border border-white"
+         alt="user avatar" />
+    <span class="text-lg font-semibold">{{ user?.fullname || 'Unknown User' }}</span>
   </div>
 </div>

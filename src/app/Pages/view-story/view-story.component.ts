@@ -3,39 +3,37 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { UploadDataService } from '../../services/upload-data.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-view-story',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, HttpClientModule], 
   templateUrl: './view-story.component.html',
 })
 export class ViewStoryComponent implements OnInit {
-  story: any = null;
-  sanitizedImageUrl: SafeResourceUrl | null = null;
-  errorMessage: string = '';
+  story: any;
+  user: any;
+  profile: any;
 
-  constructor(
-    private route: ActivatedRoute,
-    private uploadDataService: UploadDataService,
-    private sanitizer: DomSanitizer
-  ) {}
+  constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
     const storyId = this.route.snapshot.paramMap.get('id');
-    if (storyId) {
-      this.uploadDataService.getStoryById(storyId).subscribe(
-        (data) => {
-          this.story = data;
-          this.sanitizedImageUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.story.image || this.story.imageUrl);
-        },
-        (error) => {
-          console.error('Failed getting story:', error);
-          this.errorMessage = 'Unable to load the story. Please try again later.';
-        }
-      );
-    } else {
-      this.errorMessage = 'Invalid story ID.';
-    }
+
+    this.http.get<any[]>('http://localhost:3000/storyUpdate').subscribe(stories => {
+      this.story = stories.find(s => s.id == storyId);
+
+      if (this.story) {
+        this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
+          this.user = users.find(u => u.id === this.story.userId);
+        });
+
+        this.http.get<any[]>('http://localhost:3000/profile').subscribe(profiles => {
+          this.profile = profiles.find(p => p.userId === this.story.userId);
+        });
+      }
+    });
   }
 }

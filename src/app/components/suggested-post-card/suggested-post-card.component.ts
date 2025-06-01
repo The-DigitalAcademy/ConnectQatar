@@ -1,63 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { forkJoin } from 'rxjs';
-
-interface Profile {
-  id: string;
-  name: string;
-  image: string;
-  userId: string;
-}
-
-interface Post {
-  id: string;
-  title: string;
-  image: string;
-  profileId: string;
-}
 
 @Component({
   selector: 'app-suggested-post-card',
-  standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule],
   templateUrl: './suggested-post-card.component.html',
 })
-export class SuggestedPostCardComponent implements OnInit {
-  usersWithPosts: Array<Profile & { posts: Post[] }> = [];
+export class SuggestedPostCardComponent {
+  @Input() user: any;
+  @Input() isFollowed: boolean = false;
+  @Output() toggleFollow = new EventEmitter<string>();
 
-  constructor(private http: HttpClient) {}
-
-  ngOnInit() {
-    forkJoin({
-      profiles: this.http.get<Profile[]>('http://localhost:3000/profile'),
-      posts: this.http.get<Post[]>('http://localhost:3000/posts'),
-    }).subscribe({
-      next: ({ profiles, posts }) => {
-        this.usersWithPosts = profiles.map(profile => ({
-          ...profile,
-          posts: posts.filter(p => p.profileId === profile.id),
-        }));
-        console.log('Users with posts:', this.usersWithPosts);
-      },
-      error: err => {
-        console.error('Error fetching data', err);
-      }
-    });
+  onToggleFollow() {
+    this.toggleFollow.emit(this.user.id);
   }
-
-  trackByUserId = (_: number, item: Profile & { posts: Post[] }) => item.id;
-  followedIds = new Set<string>();
-
-toggleFollow(profile: Profile) {
-  if (this.followedIds.has(profile.id)) {
-    this.followedIds.delete(profile.id);
-  } else {
-    this.followedIds.add(profile.id);
-  }
-}
-
-isFollowed(profile: Profile): boolean {
-  return this.followedIds.has(profile.id);
-}
 }

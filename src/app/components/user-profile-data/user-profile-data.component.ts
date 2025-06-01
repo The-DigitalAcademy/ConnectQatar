@@ -25,16 +25,12 @@ url: string = '';
     const user = JSON.parse(localStorage.getItem('currentUser') ?? '{}');
     const userId = user.id;
 
-    // Get profile info from the server
-    this.http.get<any[]>(`http://localhost:3000/profile?userId=${userId}`)
-      .subscribe(profile => {
-        if (profile.length > 0) {
-          const data = profile[0];
-          this.url = data.avatar;
-          this.followers = data.followCount;
-          this.following = data.followingCount;
-        }
-      });
+    this.http.get<any[]>('http://localhost:3000/following').subscribe(data => {
+      const entry = data.find(f => f.userId === userId);
+      this.following = entry?.following?.length || 0;
+
+      this.followers = data.filter(f => f.following.includes(userId)).length;
+    });
 
     this.http.get<any[]>(`http://localhost:3000/posts?userId=${userId}`)
       .subscribe(posts => {
