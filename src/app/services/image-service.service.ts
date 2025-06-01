@@ -21,7 +21,7 @@ export class ImageServiceService {
     return this.http.post<ProfileImage>(this.apiUrl, data);
   }
 
-  // Get images by userId
+  
   getImagesByUserId(userId: number): Observable<ProfileImage[]> {
     return this.http.get<ProfileImage[]>(`${this.apiUrl}?userId=${userId}`);
   }
