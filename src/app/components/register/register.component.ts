@@ -45,7 +45,7 @@ export class RegisterComponent {
       const { confirmPassword, ...user } = this.signupForm.value;
       this.authService.signup(user as User).subscribe({
         next: () => {
-          this.message = 'Successfully Signed Up! Redirecting to login...';
+          this.message = 'Successfully Signed Up! Redirecting to Sign In...';
           setTimeout(() => this.router.navigate(['/login']), 2000);
         },
         error: () => (this.message = 'Sign Up failed. Try again.'),
