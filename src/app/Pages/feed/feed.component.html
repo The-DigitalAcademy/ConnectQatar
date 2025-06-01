@@ -1,1 +1,15 @@
-<app-post-card [postsWithProfiles]="postsWithProfiles"></app-post-card>
+<ng-container *ngIf="postsWithProfiles.length > 0; else noPostsMessage">
+  <app-post-card
+    *ngFor="let item of postsWithProfiles"
+    [post]="item.post"
+    [profile]="item.profile"
+    [user]="item.user">
+  </app-post-card>
+</ng-container>
+
+<!-- If no posts are available -->
+<ng-template #noPostsMessage>
+  <div class="text-center mt-10 text-white text-lg h-100vh flex items-center justify-center">
+    Your feed is quiet 😶 <br> Follow some users to see their posts here!
+  </div>
+</ng-template>

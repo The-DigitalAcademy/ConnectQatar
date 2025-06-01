@@ -8,4 +8,7 @@ import { CommonModule } from '@angular/common';
 })
 export class PostCardComponent {
   @Input() postsWithProfiles: any[] = [];
+  @Input() post!: any;
+  @Input() profile!: any;
+  @Input() user!: any;
 }
