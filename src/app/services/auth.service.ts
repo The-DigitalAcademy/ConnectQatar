@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, tap, map } from 'rxjs';
+import { ImageServiceService } from './image-service.service';
 
 export interface User {
   id?: number;
@@ -18,7 +19,8 @@ export class AuthService {
 
   isLoggedIn$: Observable<boolean> = this._isLoggedIn.asObservable();
 
-  constructor(private http: HttpClient, private router: Router) {}
+  
+  constructor(private http: HttpClient, private router: Router,private imageService :ImageServiceService) {}
 
   private hasToken(): boolean {
     return !!localStorage.getItem('token');
@@ -43,6 +45,13 @@ export class AuthService {
           localStorage.setItem('token', 'mock-jwt-token');
           localStorage.setItem('currentUser', JSON.stringify(user));
           this._isLoggedIn.next(true);
+
+            this.imageService.getImagesByUserId(user.id!).subscribe(images => {
+          if (images.length > 0) {
+            const latestImage = images[images.length - 1].image;
+            localStorage.setItem(`profileImage_${user.id}`, latestImage);
+          }
+        });
           return true;
         }
         return false;
@@ -51,6 +60,11 @@ export class AuthService {
   }
 
   logout() {
+
+    const currentUser = this.getCurrentUser();
+  if (currentUser && currentUser.id) {
+    localStorage.removeItem(`profileImage_${currentUser.id}`);
+  }
     localStorage.removeItem('token');
     localStorage.removeItem('currentUser');
     this._isLoggedIn.next(false);
