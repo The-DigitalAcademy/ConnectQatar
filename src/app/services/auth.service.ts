@@ -25,13 +25,33 @@ export class AuthService {
   }
 
   signup(user: User) {
-    
-    return this.http.post<User>(this.apiUrl, user).pipe(
-      tap(() => {
-        
-      })
-    );
-  }
+  return this.http.post<User>(this.apiUrl, user).pipe(
+    tap((createdUser) => {
+      const userId = createdUser.id?.toString();
+      const defaultAvatar = 'https://example.com/default-avatar.jpg';
+
+      // These three POSTs set up the required entries for new users, create profile, following, and profile image
+      if (userId) {
+        this.http.post('http://localhost:3000/profile', {
+          userId,
+          avatar: defaultAvatar,
+          followCount: 0,
+          followingCount: 0
+        }).subscribe();
+
+        this.http.post('http://localhost:3000/following', {
+          userId,
+          following: []
+        }).subscribe();
+
+        this.http.post('http://localhost:3000/profileImage', {
+          userId,
+          image: defaultAvatar
+        }).subscribe();
+      }
+    })
+  );
+}
 
   login(username: string, password: string) {
     

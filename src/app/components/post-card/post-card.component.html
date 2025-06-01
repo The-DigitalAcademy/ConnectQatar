@@ -1,9 +1,9 @@
 <div *ngFor="let item of postsWithProfiles" class="shadow p-0 h-auto">
   <div class="flex items-center rounded-full mt-5 ml-2">
     <a routerLink="/userProfile">
-      <img class="rounded-full h-8 w-8" [src]="item.profile.image" alt="user profile" />
+      <img class="rounded-full h-8 w-8" [src]="item.profile?.avatar" alt="user profile" />
     </a>
-    <h1 class="text-white text-m m-2 font-thin">{{ item.profile.name }}</h1>
+    <h1 class="text-white text-m m-2 font-thin">{{ item.user?.fullname }}</h1>
   </div>
 
   <div class="h-fit w-full justify-center items-center mt-2">
@@ -11,8 +11,7 @@
   </div>
 
   <div class="flex flex-row items-center gap-2 pt-2 pb-2 ml-2">
-    <p class="text-white text-lg font-bold">{{ item.profile.name }}</p>
+    <p class="text-white text-lg font-bold">{{ item.user?.fullname }}</p>
     <p class="text-white">{{ item.post.title }}</p>
   </div>
-
 </div>

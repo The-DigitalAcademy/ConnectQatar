@@ -1,0 +1,8 @@
+<div *ngIf="userPosts.length === 0" class="text-white text-center p-4">
+  No posts yet.
+</div>
+
+<div *ngFor="let post of userPosts" class="p-4 shadow rounded mb-4">
+  <img [src]="post.image" alt="User post" class="w-full rounded" />
+  <h2 class="text-white text-xl mt-2">{{ post.title }}</h2>
+</div>

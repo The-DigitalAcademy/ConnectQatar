@@ -1,69 +1,115 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { forkJoin, Observable, of } from 'rxjs';
-import { catchError, map, switchMap } from 'rxjs/operators';
-import { AuthService, User } from './auth.service';
+import { Observable, forkJoin, map } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class PostService {
-
   private baseUrl = 'http://localhost:3000';
+  private postsUrl = 'http://localhost:3000/posts';
+  private profilesUrl = 'http://localhost:3000/profile';
+  private usersUrl = 'http://localhost:3000/users';
 
-  constructor(private http: HttpClient, private authService: AuthService) {}
+  constructor(private http: HttpClient) {}
 
-getPostsOfCurrentUser(): Observable<any[]> {
-  const user = this.authService.getCurrentUser();
-  if (!user?.id) return of([]);
-
-  // Fetch the profile for the current user
-  return this.http.get<any[]>(`${this.baseUrl}/profile`, {
-    params: { userId: user.id }  // Filter by user ID
-  }).pipe(
-    switchMap(profiles => {
-      // Check if we found the user's profile
-      if (!profiles || profiles.length === 0) {
-        console.warn('No profile found for user:', user.id);
-        return of([]);
-      }
-
-      // Since each user has only one profile, take the first match
-      const profile = profiles[0];
-      const profileId = profile.id;
-
-      // Fetch posts ONLY for this specific profile
-      return this.http.get<any[]>(`${this.baseUrl}/posts`, {
-        params: {
-          profileId: profileId,  // Only fetch posts for this profile
-          _sort: 'id',
-          _order: 'desc'
-        }
-      });
-    }),
-    catchError(error => {
-      console.error('Error fetching posts:', error);
-      return of([]);
-    })
-  );
-}
-
-
-  getPostsWithDetails(): Observable<any[]> {
-    return forkJoin({
-      posts: this.http.get<any[]>(`${this.baseUrl}/posts`),
-      profiles: this.http.get<any[]>(`${this.baseUrl}/profile`),
-    }).pipe(
-      map(({ posts, profiles }) => {
-        return posts.map((post) => {
-          const profile = profiles.find((p) => p.id === post.profileId);
-
+  getPostsWithProfiles(): Observable<any[]> {
+    return forkJoin([
+      this.http.get<any[]>(this.postsUrl),
+      this.http.get<any[]>(this.profilesUrl),
+      this.http.get<any[]>(this.usersUrl)
+    ]).pipe(
+      map(([posts, profiles, users]) =>
+        posts.map(post => {
+          const profile = profiles.find(p => p.userId === post.userId);
+          const user = users.find(u => u.id === post.userId);
           return {
             post,
             profile,
+            user
+          };
+        })
+      )
+    );
+  }
+
+  getPostsFromFollowedUsers(currentUserId: string): Observable<any[]> {
+    return forkJoin([
+      this.http.get<any[]>(`${this.baseUrl}/following`),
+      this.http.get<any[]>(`${this.baseUrl}/posts`),
+      this.http.get<any[]>(`${this.baseUrl}/profile`),
+      this.http.get<any[]>(`${this.baseUrl}/users`)
+    ]).pipe(
+      map(([followingData, posts, profiles, users]) => {
+        const followEntry = followingData.find(f => f.userId === currentUserId);
+        const followingIds = followEntry?.following || [];
+
+        return posts
+          .filter(post => followingIds.includes(post.userId))
+          .map(post => {
+            const profile = profiles.find(p => p.userId === post.userId);
+            const user = users.find(u => u.id === post.userId);
+            return { post, profile, user };
+          });
+      })
+    );
+  }
+
+  getSuggestedPosts(currentUserId: string): Observable<any[]> {
+  return forkJoin([
+    this.http.get<any[]>(`${this.baseUrl}/following`),
+    this.http.get<any[]>(`${this.baseUrl}/posts`),
+    this.http.get<any[]>(`${this.baseUrl}/profile`),
+    this.http.get<any[]>(`${this.baseUrl}/users`)
+  ]).pipe(
+    map(([followingData, posts, profiles, users]) => {
+      const followEntry = followingData.find(f => f.userId === currentUserId);
+      const followingIds = followEntry?.following || [];
+
+      const suggestedUsers = users
+        .filter(user => !followingIds.includes(user.id) && user.id !== currentUserId)
+        .map(user => {
+          const profile = profiles.find(p => p.userId === user.id);
+          const userPosts = posts.filter(post => post.userId === user.id);
+          return {
+            id: user.id,
+            name: user.fullname,
+            profile,
+            image: profile?.avatar,
+            posts: userPosts
+          };
+        });
+
+      return suggestedUsers;
+    })
+  );
+  }
+
+  getStoriesFromFollowedUsers(currentUserId: string): Observable<any[]> {
+  return forkJoin([
+    this.http.get<any[]>('http://localhost:3000/following'),
+    this.http.get<any[]>('http://localhost:3000/storyUpdate'),
+    this.http.get<any[]>('http://localhost:3000/users'),
+    this.http.get<any[]>('http://localhost:3000/profile')
+  ]).pipe(
+    map(([followingData, stories, users, profiles]) => {
+      const followingEntry = followingData.find(f => f.userId === currentUserId);
+      const followingIds = followingEntry?.following || [];
+
+      return stories
+        .filter(story => followingIds.includes(story.userId))
+        .map(story => {
+          const user = users.find(u => u.id === story.userId);
+          const profile = profiles.find(p => p.userId === story.userId);
+          return {
+            ...story,
+            user,
+            profile
           };
         });
       })
     );
   }
+
+
 }
