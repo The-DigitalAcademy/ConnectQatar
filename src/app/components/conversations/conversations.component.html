@@ -1,7 +1,7 @@
-<div class="top-0 left-0">
-    <div *ngFor="let user of users" class="mb-2">
-      <a [routerLink]="['/messages', user.id]" class="text-blue-300 hover:underline">
-        {{ user.fullname }} ({{ user.username }})
-      </a>
-    </div>
+<div class="p-2 space-y-4 flex flex-col w-100%">
+  <div *ngFor="let user of users" class="bg-gray-800 rounded-lg p-4 shadow hover:bg-gray-700 transition w-100%">
+    <a [routerLink]="['/messages', user.id]" class="text-white text-lg font-medium hover:underline">
+      {{ user.fullname }} <span class="text-sm text-gray-400">({{ user.username }})</span>
+    </a>
+  </div>
 </div>
