@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../services/post.service';
 import { PostCardComponent } from '../../components/post-card/post-card.component';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-feed',
-  imports: [PostCardComponent, CommonModule],
+  imports: [PostCardComponent, CommonModule,RouterLink],
   templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.css']
 })

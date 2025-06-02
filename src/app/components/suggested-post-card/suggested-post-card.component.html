@@ -2,11 +2,11 @@
   <div class="flex items-center rounded-full mt-5 ml-2">
     <img class="rounded-full h-8 w-8" [src]="user.image" [alt]="user.name + ' profile'" />
     <h1 class="text-white flex-1 m-2 font-thin">{{ user.name }}</h1>
-    <div class="flex text-white border rounded-full w-29 pr-5">
+    <div class="flex text-white border rounded-full m-2">
       <button
         (click)="onToggleFollow()"
         [ngClass]="isFollowed ? 'bg-gray-700 hover:bg-gray-800' : 'bg-blue-700 hover:bg-blue-800'"
-        class="text-white font-medium text-sm py-1 px-4 rounded-full transition duration-200 ease-in-out"
+        class="text-white font-medium text-sm py-1 px-4 w-29 rounded-full transition duration-200 ease-in-out"
       >
         {{ isFollowed ? 'Unfollow' : 'Follow' }}
       </button>
