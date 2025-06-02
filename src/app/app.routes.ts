@@ -13,7 +13,7 @@ import { ViewStoryComponent } from './Pages/view-story/view-story.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SuggestedPostsComponent } from './components/suggested-posts/suggested-posts.component';
 import { ChatComponent } from './Pages/chat/chat.component';
-import { MessagingPageComponent } from './Pages/messaging-page/messaging-page.component';
+import { MessagingComponent } from './Pages/messaging/messaging.component';
 import { ConversationsComponent } from './components/conversations/conversations.component';
 
 export const routes: Routes = [
@@ -29,9 +29,8 @@ export const routes: Routes = [
     {path:'register',component:RegisterComponent},
     {path:'create', component:CreatePostsComponent},
     {path: 'chat', component:ChatComponent},
-    {path: 'messaging', component: MessagingPageComponent},
     {path: 'conversations', component: ConversationsComponent},
-    {path: 'messages/:userId', component: MessagingPageComponent}
+    {path: 'messages/:userId', component: MessagingComponent}
 ];
 
 @NgModule({
