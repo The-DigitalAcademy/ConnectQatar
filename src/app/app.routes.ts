@@ -3,7 +3,6 @@ import { FollowingPostComponent } from './following-post/following-post.componen
 import { CreatePostsComponent } from './components/create-posts/create-posts.component';import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { LoginComponent } from './login/login.component';
 import { AppComponent } from './app.component';
 import { UserProfileComponent } from './Pages/user-profile/user-profile.component';
@@ -13,7 +12,7 @@ import { ViewStoryComponent } from './Pages/view-story/view-story.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SuggestedPostsComponent } from './components/suggested-posts/suggested-posts.component';
 import { ChatComponent } from './Pages/chat/chat.component';
-import { MessagingComponent } from './Pages/messaging/messaging.component';
+import { MessagingPageComponent } from './Pages/messaging/messaging.component';
 import { ConversationsComponent } from './components/conversations/conversations.component';
 
 export const routes: Routes = [
@@ -30,7 +29,7 @@ export const routes: Routes = [
     {path:'create', component:CreatePostsComponent},
     {path: 'chat', component:ChatComponent},
     {path: 'conversations', component: ConversationsComponent},
-    {path: 'messages/:userId', component: MessagingComponent}
+    {path: 'messages/:userId', component: MessagingPageComponent}
 ];
 
 @NgModule({

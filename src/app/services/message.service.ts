@@ -30,7 +30,7 @@ export class MessageService {
           map(users => users.filter(user => userIds.includes(user.id)))
         )
       ),
-      
+
       switchAll()
     );
   }
@@ -47,12 +47,12 @@ export class MessageService {
   }
 
   sendMessage(senderId: string, receiverId: string, content: string): Observable<any> {
-    const newMessage = {
-      senderId,
-      receiverId,
-      content,
-      timestamp: new Date().toISOString()
-    };
-    return this.http.post(this.api, newMessage);
-  }
+  const newMessage = {
+    senderId,
+    receiverId,
+    content,
+    timestamp: new Date().toISOString()
+  };
+  return this.http.post('http://localhost:3000/messages', newMessage);
+}
 }

@@ -1,5 +1,4 @@
-<div class="p-4">
-    <h2 class="text-xl text-white mb-4 top-0">Conversations</h2>
+<div class="top-0 left-0">
     <div *ngFor="let user of users" class="mb-2">
       <a [routerLink]="['/messages', user.id]" class="text-blue-300 hover:underline">
         {{ user.fullname }} ({{ user.username }})
