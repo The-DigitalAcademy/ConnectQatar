@@ -186,6 +186,13 @@
       "username": "kb",
       "email": "kb@email.com",
       "password": "123"
+    },
+    {
+      "id": "fe2a",
+      "fullname": "lebohang",
+      "username": "tee-kay",
+      "email": "tee@gmail.com",
+      "password": "123"
     }
   ],
   "profile": [
@@ -265,6 +272,13 @@
       "avatar": "https://example.com/default-avatar.jpg",
       "followCount": 0,
       "followingCount": 0
+    },
+    {
+      "id": "b207",
+      "userId": "fe2a",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "followCount": 0,
+      "followingCount": 0
     }
   ],
   "friends": [
@@ -301,154 +315,154 @@
   ],
   "messages": [
     {
-      "id": 1,
+      "id": "1",
       "senderId": 1,
       "receiverId": 2,
       "content": "Hey!",
       "timestamp": "2024-05-19T15:00:00Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "senderId": 2,
       "receiverId": 1,
       "content": "Hi!",
       "timestamp": "2024-05-19T15:02:00Z"
     },
     {
-      "id": 3,
+      "id": "3",
       "senderId": 1,
       "receiverId": 2,
       "content": "How are you?",
       "timestamp": "2024-05-19T15:05:00Z"
     },
     {
-      "id": 4,
+      "id": "4",
       "senderId": 2,
       "receiverId": 1,
       "content": "I'm good, thanks! How about you?",
       "timestamp": "2024-05-19T15:07:00Z"
     },
     {
-      "id": 5,
+      "id": "5",
       "senderId": 1,
       "receiverId": 2,
       "content": "Doing well, just busy with work.",
       "timestamp": "2024-05-19T15:10:00Z"
     },
     {
-      "id": 6,
+      "id": "6",
       "senderId": 2,
       "receiverId": 1,
       "content": "Same here. Let's catch up soon!",
       "timestamp": "2024-05-19T15:12:00Z"
     },
     {
-      "id": 7,
+      "id": "7",
       "senderId": 1,
       "receiverId": 2,
       "content": "Definitely! How about this weekend?",
       "timestamp": "2024-05-19T15:15:00Z"
     },
     {
-      "id": 8,
+      "id": "8",
       "senderId": 2,
       "receiverId": 1,
       "content": "Sounds great! See you then.",
       "timestamp": "2024-05-19T15:17:00Z"
     },
     {
-      "id": 9,
+      "id": "9",
       "senderId": 1,
       "receiverId": 3,
       "content": "Hey, long time no talk!",
       "timestamp": "2024-05-19T16:00:00Z"
     },
     {
-      "id": 10,
+      "id": "10",
       "senderId": 3,
       "receiverId": 1,
       "content": "Yeah, it's been a while. How have you been?",
       "timestamp": "2024-05-19T16:03:00Z"
     },
     {
-      "id": 11,
+      "id": "11",
       "senderId": 2,
       "receiverId": 4,
       "content": "Hey, you coming to the event later?",
       "timestamp": "2024-05-19T16:10:00Z"
     },
     {
-      "id": 12,
+      "id": "12",
       "senderId": 4,
       "receiverId": 2,
       "content": "Yep! Just finishing up a few things.",
       "timestamp": "2024-05-19T16:12:00Z"
     },
     {
-      "id": 13,
+      "id": "13",
       "senderId": 1,
       "receiverId": 4,
       "content": "Loved your recent post!",
       "timestamp": "2024-05-19T16:15:00Z"
     },
     {
-      "id": 14,
+      "id": "14",
       "senderId": 4,
       "receiverId": 1,
       "content": "Thanks! Appreciate it 😊",
       "timestamp": "2024-05-19T16:17:00Z"
     },
     {
-      "id": 15,
+      "id": "15",
       "senderId": 3,
       "receiverId": 2,
       "content": "Need help with the group project?",
       "timestamp": "2024-05-19T16:30:00Z"
     },
     {
-      "id": 16,
+      "id": "16",
       "senderId": 2,
       "receiverId": 3,
       "content": "Yes please! I’ll send the files shortly.",
       "timestamp": "2024-05-19T16:35:00Z"
     },
     {
-      "id": 17,
+      "id": "17",
       "senderId": 5,
       "receiverId": 6,
       "content": "You around later?",
       "timestamp": "2024-05-19T17:00:00Z"
     },
     {
-      "id": 18,
+      "id": "18",
       "senderId": 6,
       "receiverId": 5,
       "content": "Yep, what’s up?",
       "timestamp": "2024-05-19T17:01:00Z"
     },
     {
-      "id": 19,
+      "id": "19",
       "senderId": 4,
       "receiverId": 7,
       "content": "Great pic you posted!",
       "timestamp": "2024-05-19T17:05:00Z"
     },
     {
-      "id": 20,
+      "id": "20",
       "senderId": 7,
       "receiverId": 4,
       "content": "Thank you! Appreciate the love 💛",
       "timestamp": "2024-05-19T17:07:00Z"
     },
     {
-      "id": 21,
+      "id": "21",
       "senderId": 8,
       "receiverId": 1,
       "content": "Can I ask you something real quick?",
       "timestamp": "2024-05-19T17:10:00Z"
     },
     {
-      "id": 22,
+      "id": "22",
       "senderId": 1,
       "receiverId": 8,
       "content": "Of course, go ahead.",
@@ -457,27 +471,27 @@
   ],
   "storyUpdate": [
     {
-      "id": 1,
+      "id": "1",
       "image": "https://images.pexels.com/photos/3219442/pexels-photo-3219442.jpeg",
       "userId": "3d68"
     },
     {
-      "id": 2,
+      "id": "2",
       "image": "https://images.pexels.com/photos/12881264/pexels-photo-12881264.jpeg",
       "userId": "75k0"
     },
     {
-      "id": 3,
+      "id": "3",
       "image": "https://images.pexels.com/photos/2306109/pexels-photo-2306109.jpeg",
       "userId": "d7f0"
     },
     {
-      "id": 4,
+      "id": "4",
       "image": "https://images.pexels.com/photos/1628240/pexels-photo-1628240.jpeg",
       "userId": "9fb8"
     },
     {
-      "id": 5,
+      "id": "5",
       "image": "https://images.pexels.com/photos/18514829/pexels-photo-18514829.jpeg",
       "userId": "e0a9"
     }
@@ -507,6 +521,11 @@
       "id": "9b9c",
       "userId": "ae46",
       "image": "https://example.com/default-avatar.jpg"
+    },
+    {
+      "id": "2bcf",
+      "userId": "fe2a",
+      "image": "https://example.com/default-avatar.jpg"
     }
   ],
   "following": [
@@ -516,49 +535,56 @@
         "d7f0",
         "75k0",
         "3d68"
-      ]
+      ],
+      "id": "d99c"
     },
     {
       "userId": "9fx8",
       "following": [
         "c3f2",
         "3d68"
-      ]
+      ],
+      "id": "3242"
     },
     {
       "userId": "d7f0",
       "following": [
         "9fb8",
         "e0a9"
-      ]
+      ],
+      "id": "04ac"
     },
     {
       "userId": "75k0",
       "following": [
         "9fb8",
         "3d68"
-      ]
+      ],
+      "id": "3d6c"
     },
     {
       "userId": "3d68",
       "following": [
         "9fx8",
         "c3f2"
-      ]
+      ],
+      "id": "771b"
     },
     {
       "userId": "c3f2",
       "following": [
         "e0a9",
         "3d68"
-      ]
+      ],
+      "id": "8522"
     },
     {
       "userId": "e0a9",
       "following": [
         "9fb8",
         "9fx8"
-      ]
+      ],
+      "id": "c1ac"
     },
     {
       "userId": "12a8",
@@ -566,7 +592,8 @@
         "9fb8",
         "75k0",
         "c3f2"
-      ]
+      ],
+      "id": "7b90"
     },
     {
       "id": "ca86",
@@ -582,6 +609,18 @@
       "id": "7892",
       "userId": "ae46",
       "following": []
+    },
+    {
+      "id": "ac21",
+      "userId": "fe2a",
+      "following": [
+        "9fb8",
+        "9fx8",
+        "3d68",
+        "75k0",
+        "d7f0",
+        "c3f2"
+      ]
     }
   ]
 }

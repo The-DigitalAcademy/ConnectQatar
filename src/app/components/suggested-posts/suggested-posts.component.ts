@@ -4,6 +4,7 @@ import { BottomNavComponent } from "../bottom-nav/bottom-nav.component";
 import { CommonModule } from '@angular/common';
 import { SuggestedPostCardComponent } from "../suggested-post-card/suggested-post-card.component";
 import { PostService } from '../../services/post.service';
+import { FollowService } from '../../services/follow.service';
 
 @Component({
   selector: 'app-suggested-posts',
@@ -15,31 +16,35 @@ export class SuggestedPostsComponent implements OnInit {
   currentFollowing: string[] = [];
   currentUserId: string = '';
 
-  constructor(private postService: PostService) {}
+  constructor(
+    private postService: PostService,
+    private followService: FollowService 
+  ) {}
 
   ngOnInit(): void {
     const currentUser = JSON.parse(localStorage.getItem('currentUser') ?? '{}');
     this.currentUserId = currentUser.id;
 
+    this.refreshCurrentFollowing();
+
     this.postService.getSuggestedPosts(this.currentUserId).subscribe(data => {
       this.usersWithPosts = data;
     });
+  }
 
-    this.postService.getPostsFromFollowedUsers(this.currentUserId).subscribe(following => {
-      this.currentFollowing = following;
+  onToggleFollow(targetUserId: string) {
+    this.followService.toggleFollow(this.currentUserId, targetUserId).subscribe(() => {
+      this.refreshCurrentFollowing();
     });
   }
 
-  onToggleFollow(userId: string): void {
-    if (this.currentFollowing.includes(userId)) {
-      this.currentFollowing = this.currentFollowing.filter(id => id !== userId);
-    } else {
-      this.currentFollowing.push(userId);
-    }
+  refreshCurrentFollowing() {
+    this.followService.getFollowingEntry(this.currentUserId).subscribe(entry => {
+      this.currentFollowing = entry?.following ?? [];
+    });
   }
 
   trackByUserId(index: number, user: any): string {
     return user.id;
   }
 }
-
