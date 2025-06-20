@@ -18,7 +18,7 @@ export class SuggestedPostsComponent implements OnInit {
 
   constructor(
     private postService: PostService,
-    private followService: FollowService 
+    private followService: FollowService
   ) {}
 
   ngOnInit(): void {

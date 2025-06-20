@@ -516,6 +516,13 @@
       "receiverId": "c3f2",
       "content": "helle",
       "timestamp": "2025-06-20T16:41:45.230Z"
+    },
+    {
+      "id": "8db2",
+      "senderId": "9fb8",
+      "receiverId": "3d68",
+      "content": "jhjh 🕯️",
+      "timestamp": "2025-06-20T18:51:29.535Z"
     }
   ],
   "storyUpdate": [
@@ -585,7 +592,9 @@
         "75k0",
         "3d68",
         "9fx8",
-        "c3f2"
+        "c3f2",
+        "e0a9",
+        "12a8"
       ],
       "id": "dcb9"
     },
