@@ -1,10 +1,18 @@
 <div *ngFor="let item of postsWithProfiles" class="shadow p-0 h-auto">
-  <div class="flex items-center rounded-full mt-5 ml-2">
+  <div class="flex items-center rounded-full mt-5 ml-2 text-white">
     <a routerLink="/userProfile">
       <img class="rounded-full h-8 w-8" [src]="item.profile?.avatar" alt="user profile" />
     </a>
-    <h1 class="text-white text-m m-2 font-thin">{{ item.user?.fullname }}</h1>
+    <h1 class="text-white text-m m-2 font-thin flex-1">{{ item.user?.fullname }}</h1>
+
+    <div class="mr-5 shadow-lg  p-2 rounded-full hover:bg-blue-800  w-32 text-center">
+      <button (click)="console.log('unfollow clicked')">
+
+        {{ isFollowed ? 'Unfollow' : 'Follow' }}
+      </button>
+    </div>
   </div>
+
 
   <div class="h-fit w-full justify-center items-center mt-2">
     <img [src]="item.post.image" alt="user post" />

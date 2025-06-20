@@ -12,6 +12,9 @@ import { DesktopMessageComponent } from './components/desktop-message/desktop-me
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
+  title(title: any) {
+      throw new Error('Method not implemented.');
+  }
   showCreateOverlay: boolean = false;
   isMobileView: boolean = true;
 
