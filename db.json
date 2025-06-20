@@ -502,6 +502,20 @@
       "receiverId": "3d68",
       "content": "I should make the same post",
       "timestamp": "2025-06-02T09:20:39.740Z"
+    },
+    {
+      "id": "4d0b",
+      "senderId": "9fb8",
+      "receiverId": "9fx8",
+      "content": "heelo",
+      "timestamp": "2025-06-20T16:31:23.099Z"
+    },
+    {
+      "id": "8370",
+      "senderId": "9fb8",
+      "receiverId": "c3f2",
+      "content": "helle",
+      "timestamp": "2025-06-20T16:41:45.230Z"
     }
   ],
   "storyUpdate": [
@@ -569,7 +583,9 @@
       "following": [
         "d7f0",
         "75k0",
-        "3d68"
+        "3d68",
+        "9fx8",
+        "c3f2"
       ],
       "id": "dcb9"
     },
