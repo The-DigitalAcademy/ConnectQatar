@@ -14,6 +14,7 @@ import { SuggestedPostsComponent } from './components/suggested-posts/suggested-
 import { ChatComponent } from './Pages/chat/chat.component';
 import { MessagingPageComponent } from './Pages/messaging/messaging.component';
 import { ConversationsComponent } from './components/conversations/conversations.component';
+import {LoaderComponent} from './components/loader/loader.component';
 
 export const routes: Routes = [
     {path: 'posts', component: FollowingPostComponent},
@@ -29,7 +30,8 @@ export const routes: Routes = [
     {path:'create', component:CreatePostsComponent},
     {path: 'chat', component:ChatComponent},
     {path: 'conversations', component: ConversationsComponent},
-    {path: 'messages/:userId', component: MessagingPageComponent}
+    {path: 'messages/:userId', component: MessagingPageComponent},
+    {path: 'loader', component:LoaderComponent}
 ];
 
 @NgModule({
@@ -38,10 +40,10 @@ export const routes: Routes = [
       CommonModule,
       ReactiveFormsModule,
       FormsModule,
-      RouterModule.forRoot(routes)   
+      RouterModule.forRoot(routes)
   ],
   exports: [
-      RouterModule  
+      RouterModule
   ]
 })
 export class AppRoutingModule { }
