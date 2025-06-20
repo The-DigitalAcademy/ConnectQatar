@@ -1,4 +1,8 @@
-<div class="h-screen w-full m-auto flex flex-col text-white text-2xl justify-center items-center pt-5">
+<div class="h-screen w-full m-auto flex flex-col text-white text-2xl justify-center items-center pt-5 relative">
+
+  <div *ngIf="isLoading" class="fixed inset-0 z-50 flex items-center justify-center bg-[#21313e] bg-opacity-60">
+    <app-loader/>
+  </div>
 
   <div class="items-center justify-center flex flex-col" >
     <svg
@@ -142,9 +146,10 @@
         <button
           class="rounded-full border p-2 w-full m-3 bg-white text-[#21313e] font-bold"
           type="submit"
-          [disabled]="signupForm.invalid"
+          [disabled]="signupForm.invalid || isLoading"
         >
-          Sign Up
+          <span *ngIf="!isLoading">Sign Up</span>
+          <span *ngIf="isLoading">Signing Up...</span>
         </button>
       </div>
       <div>
@@ -158,4 +163,5 @@
         <span *ngIf="message">{{ message }}</span>
     </div>
 
+  </div>
 </div>

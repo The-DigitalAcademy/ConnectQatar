@@ -6,10 +6,11 @@ import { UploadDataService } from '../../services/upload-data.service';
 import { PostRequestInterface } from '../../models/post';
 import { StoryRequestInterface } from '../../models/post';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { LoaderComponent } from "../loader/loader.component";
 
 @Component({
   selector: 'app-create-posts',
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, HttpClientModule, LoaderComponent],
   templateUrl: './create-posts.component.html',
   styleUrl: './create-posts.component.css',
 })
@@ -23,20 +24,20 @@ export class CreatePostsComponent {
   overlayContent: string = ''
   selectedImageUrl: string | ArrayBuffer | null = null
 
+  loading: boolean = false; 
+
   formData = {
     caption: '',
     image: null
   }
 
   createStory(){
-    console.log('I work')
     this.overlayContent = 'New Story'
     this.isStory = true
     this.showOverlay = true
   }
 
   createPost(){
-    console.log('I work too')
     this.overlayContent = 'New Post'
     this.isStory = false
     this.showOverlay = true
@@ -50,19 +51,16 @@ export class CreatePostsComponent {
       image: null
     }
     this.selectedImageUrl = null
+    this.loading = false;
   }
 
   onSubmit() {
-    console.log(this.selectedImageUrl)
-
     if (!this.selectedImageUrl) {
       alert("Please select an image to upload.");
       return
     }
 
     let user = JSON.parse(localStorage.getItem('currentUser') ?? '{}');
-
-    console.log('User:'+ user);
 
     const newPost: PostRequestInterface = {
       userId: user.id,
@@ -75,24 +73,45 @@ export class CreatePostsComponent {
       image: this.selectedImageUrl as string
     }
 
-    if (this.isStory){
-      this.uploadDataService.addStory(newStory).subscribe(data => {
-        this.snackBar.open('Story posted successfully!', 'Close', { 
-          duration: 3000,
-          horizontalPosition: 'center', verticalPosition: 'top'
-         });
-        console.log(data)
-      })
-    }else {
-      this.uploadDataService.addPost(newPost).subscribe(data => {
-        this.snackBar.open('Post created successfully!', 'Close', { 
-          duration: 3000,
-          horizontalPosition: 'center', verticalPosition: 'top' });
-          console.log(data)
-        })
-    }
+    this.loading = true; 
 
-    this.closeOverlay()
+    if (this.isStory){
+      this.uploadDataService.addStory(newStory).subscribe({
+        next: (data) => {
+          this.snackBar.open('Story posted successfully!', 'Close', { 
+            duration: 3000,
+            horizontalPosition: 'center', verticalPosition: 'top'
+          });
+          this.closeOverlay();
+          window.location.reload(); 
+        },
+        error: (err) => {
+          this.snackBar.open('Failed to post story.', 'Close', { 
+            duration: 3000,
+            horizontalPosition: 'center', verticalPosition: 'top'
+          });
+          this.loading = false;
+        }
+      });
+    } else {
+      this.uploadDataService.addPost(newPost).subscribe({
+        next: (data) => {
+          this.snackBar.open('Post created successfully!', 'Close', { 
+            duration: 3000,
+            horizontalPosition: 'center', verticalPosition: 'top'
+          });
+          this.closeOverlay();
+          window.location.reload(); 
+        },
+        error: (err) => {
+          this.snackBar.open('Failed to create post.', 'Close', { 
+            duration: 3000,
+            horizontalPosition: 'center', verticalPosition: 'top'
+          });
+          this.loading = false;
+        }
+      });
+    }
   }
 
   onFileSelected(event: Event): void {
