@@ -1,4 +1,8 @@
-<div class="h-screen w-full m-auto flex flex-col text-white text-2xl justify-center items-center">
+<div class="h-screen w-full m-auto flex flex-col text-white text-2xl justify-center items-center relative">
+  <div *ngIf="isLoading" class="fixed inset-0 z-50 flex items-center justify-center bg-[#21313e] bg-opacity-60">
+    <app-loader/>
+  </div>
+
   <div class="items-center justify-center flex flex-col">
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -69,9 +73,10 @@
         <button
           class="rounded-full border p-2 w-full m-3 bg-white text-[#21313e] font-bold"
           type="submit"
-          [disabled]="loginForm.invalid"
+          [disabled]="loginForm.invalid || isLoading"
         >
-          Sign In
+          <span *ngIf="!isLoading">Sign In</span>
+          <span *ngIf="isLoading">Signing In...</span>
         </button>
       </div>
       <div class="flex justify-center items-center mt-1">
