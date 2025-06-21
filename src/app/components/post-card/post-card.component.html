@@ -7,12 +7,11 @@
 
     <h1 class="text-white text-m m-2 font-thin flex-1">{{ item.user?.fullname }}</h1>
 
-    <div class="mr-5 shadow-lg  p-2 rounded-full hover:bg-blue-800  w-32 text-center">
-      <button (click)="console.log('unfollow clicked')">
-
-        {{ isFollowed ? 'Unfollow' : 'Follow' }}
-      </button>
+    <div class="mr-5">
+      <app-follow-button [isFollowed]="isFollowed" (toggleFollow)="onToggleFollow()">
+    </app-follow-button>
     </div>
+    
   </div>
 
 

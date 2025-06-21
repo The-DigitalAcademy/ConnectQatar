@@ -1,10 +1,11 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterLink} from '@angular/router';
+import { FollowButtonComponent } from "../follow-button/follow-button.component";
 
 @Component({
   selector: 'app-post-card',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, FollowButtonComponent],
   templateUrl: './post-card.component.html',
 })
 export class PostCardComponent {
