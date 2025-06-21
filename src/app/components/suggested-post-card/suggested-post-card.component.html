@@ -3,8 +3,7 @@
     <img class="rounded-full h-8 w-8" [src]="user.image" alt="user.name + ' profile'" />
     <h1 class="text-white flex-1 m-2 font-thin">{{ user.name }}</h1>
     <div class="flex text-white rounded-full m-2">
-      <app-follow-button [isFollowed]="isFollowed" (toggleFollow)="onToggleFollow()">
-      </app-follow-button>
+      <app-follow-button [isFollowed]="isFollowed" (toggleFollow)="onToggleFollow()"/>
     </div>
   </div>
 

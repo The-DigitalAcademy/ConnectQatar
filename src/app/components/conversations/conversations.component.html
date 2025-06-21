@@ -1,6 +1,9 @@
 <div class="p-2 space-y-4 flex flex-col w-full">
-  <div *ngFor="let user of following" class="bg-gray-800 flex flex-row gap-2.5 rounded-lg p-4 shadow hover:bg-gray-700 transition w-full">
-    <a [routerLink]="['/messages', user.id]" class="text-white text-lg font-medium hover:underline">
+  <div *ngFor="let user of following"
+    class="bg-gray-800 flex flex-row gap-2.5 rounded-lg p-4 shadow hover:bg-gray-700 transition w-full">
+    <a [routerLink]="['/messages', user.id]"
+      class="text-white text-lg font-medium hover:underline flex items-center gap-2">
+      <img class="rounded-full h-8 w-8" [src]="user.profile?.avatar" alt="user profile" />
       {{ user.fullname }} <span class="text-sm text-gray-400">({{ user.username }})</span>
     </a>
   </div>
