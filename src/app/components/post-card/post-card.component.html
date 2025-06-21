@@ -1,0 +1,23 @@
+<div *ngFor="let item of postsWithProfiles" class="shadow p-0 h-auto">
+  <div class="flex items-center rounded-full mt-5 ml-2 text-white">
+    <a [routerLink]="['/userProfile', item.user?.id]">
+      <img class="rounded-full h-8 w-8" [src]="item.profile?.avatar" alt="user profile" />
+    </a>
+    <h1 class="text-white text-m m-2 font-thin flex-1">{{ item.user?.fullname }}</h1>
+
+    <div *ngIf="item.user?.id !== currentUserId" class="mr-5">
+      <app-follow-button 
+        [isFollowed]="isFollowed(item.user?.id)"
+        (toggleFollow)="onToggleFollow(item.user?.id)" />
+    </div>
+  </div>
+
+  <div class="h-fit w-full justify-center items-center mt-2">
+    <img [src]="item.post.image" alt="user post" />
+  </div>
+
+  <div class="flex flex-row items-center gap-2 pt-2 pb-2 ml-2">
+    <p class="text-white text-lg font-bold">{{ item.user?.fullname }}</p>
+    <p class="text-white">{{ item.post.title }}</p>
+  </div>
+</div>
