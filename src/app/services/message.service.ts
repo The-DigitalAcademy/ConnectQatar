@@ -20,7 +20,7 @@ export class MessageService {
 
   getFollowingEntry(userId: string): Observable<any> {
     return this.http.get<any[]>(`${this.followsApi}?userId=${userId}`).pipe(
-      map(entries => entries[0]) // assuming one entry per user
+      map(entries => entries[0])
     );
   }
 
