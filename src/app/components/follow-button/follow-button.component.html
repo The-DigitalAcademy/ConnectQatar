@@ -1,0 +1,7 @@
+<button
+  (click)="onToggleFollow()"
+  [ngClass]="isFollowed ? 'bg-gray-700 hover:bg-gray-800' : 'bg-blue-700 hover:bg-blue-800'"
+  class="text-white font-medium text-sm py-1 px-4 w-29 rounded-full transition duration-200 ease-in-out"
+>
+  {{ isFollowed ? 'Unfollow' : 'Follow' }}
+</button>
