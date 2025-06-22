@@ -569,6 +569,13 @@
       "receiverId": "3d68",
       "content": "jhjh 🕯️",
       "timestamp": "2025-06-20T18:51:29.535Z"
+    },
+    {
+      "id": "9d4d",
+      "senderId": "9fb8",
+      "receiverId": "12a8",
+      "content": "hey lebza",
+      "timestamp": "2025-06-22T20:14:49.740Z"
     }
   ],
   "storyUpdate": [
@@ -744,6 +751,13 @@
       "id": "aa27",
       "userId": "4703",
       "following": []
+    },
+    {
+      "id": "dc32",
+      "userId": "9540",
+      "following": [
+        "e0a9"
+      ]
     }
   ]
 }
