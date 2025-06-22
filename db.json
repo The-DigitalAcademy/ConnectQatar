@@ -744,6 +744,13 @@
       "id": "aa27",
       "userId": "4703",
       "following": []
+    },
+    {
+      "id": "dc32",
+      "userId": "9540",
+      "following": [
+        "e0a9"
+      ]
     }
   ]
 }
